@@ -2,11 +2,13 @@ package ia;
 
 import org.jgraph.graph.AttributeMap;
 import org.jgraph.graph.DefaultEdge;
+import org.jgrapht.graph.DefaultDirectedGraph;
 
 public class StringLink extends DefaultEdge 
 {
 	private static int count = 0;
 	public int my_number;
+	protected Object graph;
 
 	public StringLink() 
 	{
@@ -14,10 +16,11 @@ public class StringLink extends DefaultEdge
 		// TODO Auto-generated constructor stub
 	}
 
-	public StringLink(Object arg0) 
+	public StringLink(Object graph) 
 	{
-		super(arg0);
+		super(graph);
 		my_number = count ++;
+		this.graph = graph;
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -37,16 +40,18 @@ public class StringLink extends DefaultEdge
 	
 	public String getTarget()
 	{
-		return (String) super.getTarget();
+		DefaultDirectedGraph<String, StringLink> g = (DefaultDirectedGraph<String, StringLink>) graph;
+		return (String) g.getEdgeTarget(this);
 	}
 	
 	public String getSource()
 	{
-		return (String) super.getSource();
+		DefaultDirectedGraph<String, StringLink> g = (DefaultDirectedGraph<String, StringLink>) graph;
+		return (String) g.getEdgeSource(this);
 	}
 	
 	public String toString()
 	{
-		return new String (super.toString() + " N:" + my_number);
+		return new String (" N:" + my_number);
 	}
 }
