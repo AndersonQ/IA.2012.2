@@ -1,12 +1,7 @@
 package ia;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Set;
-
-import org.jgraph.*;
-import org.jgraph.graph.*;
-import org.jgrapht.*;
+import org.jgrapht.DirectedGraph;
 import org.jgrapht.graph.DefaultDirectedGraph;
 
 public class Tests 
