@@ -1,0 +1,13 @@
+Implementar um sistema para fazer resolução por busca:
+ - Em extensão;
+ - Profundidade;
+ - Custo Uniforme.
+ 
+ Todas em um mesmo programa onde o usuário escolhe qual tipo de busca deseja.
+ 
+ Problemas unidirecionais: encontrar caminho do estado inicial para o estado final.
+ 
+ Aplicar a um problema de viagem (cidades).
+ Aplicar para ir da UFABC para a USP considerando diferentes linhas de ônibus com tempos e preços diferentes.
+ 
+ Data da Entrega: 25/10
