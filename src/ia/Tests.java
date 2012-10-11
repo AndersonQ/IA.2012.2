@@ -13,36 +13,7 @@ public class Tests
 {
 	
 	public static void main(String args[])
-	{
-
-//		DirectedGraph<URL, DefaultEdge> g =
-//				new DefaultDirectedGraph<URL, DefaultEdge>(DefaultEdge.class);
-//
-//		try {
-//			URL amazon = new URL("http://www.amazon.com");
-//			URL yahoo = new URL("http://www.yahoo.com");
-//			URL ebay = new URL("http://www.ebay.com");
-//
-//			// add the vertices
-//			g.addVertex(amazon);
-//			g.addVertex(yahoo);
-//			g.addVertex(ebay);
-//
-//			// add edges to create linking structure
-//			g.addEdge(yahoo, amazon);
-//			g.addEdge(yahoo, ebay);
-//		} catch (MalformedURLException e) {
-//			e.printStackTrace();
-//		}
-//		
-////		Set<DefaultEdge> s = g.edgeSet();
-////		for(DefaultEdge d: s)
-////		{
-////			System.out.println(d);
-////		}
-//		System.out.println(g);
-		
-		
+	{		
 		DirectedGraph<String, StringLink> g;
 
 		g = new DefaultDirectedGraph<String, StringLink>(StringLink.class);
@@ -57,9 +28,12 @@ public class Tests
 		g.addVertex(s2);
 		g.addVertex(s3);
 		
-		g.addEdge(s1, s2, new StringLink(s1, s2));
-		g.addEdge(s2, s3, new StringLink(s2, s3));
-		g.addEdge(s3, s1, new StringLink(s3, s1));
+//		g.addEdge(s1, s2, new StringLink(s1, s2));
+//		g.addEdge(s2, s3, new StringLink(s2, s3));
+//		g.addEdge(s3, s1, new StringLink(s3, s1));
+		g.addEdge(s1, s2, new StringLink(g));
+		g.addEdge(s2, s3, new StringLink(g));
+		g.addEdge(s3, s1, new StringLink(g));
 		
 		Set<StringLink> s;
 		s = g.edgesOf(s1);
@@ -68,11 +42,8 @@ public class Tests
 		{
 			System.out.println("\nEdge: " + d);
 			System.out.println(" to: " + d.getSource() + " from: " + d.getTarget());
-			System.out.println(" to: " + g.getEdgeSource(d) + " from: " + g.getEdgeTarget(d));
-		}
-		
+			//System.out.println(" to: " + g.getEdgeSource(d) + " from: " + g.getEdgeTarget(d));
+		}		
 		System.out.println(g);
 	}
-	
-
 }
