@@ -7,7 +7,6 @@ import org.jgrapht.graph.SimpleGraph;
 
 public class UndirectedTests 
 {
-
 	/**
 	 * @param args
 	 */
@@ -45,6 +44,10 @@ public class UndirectedTests
 			System.out.print("From: " + l.getSource() + " to: " + l.getTarget());
 			System.out.println(" weight: " + l.getWeight());
 		}
+		
+		System.out.println("\n\nEdges of " + c4);
+		s = g.edgesOf(c4);
+		for(WeightCityLink l: s)
+			System.out.println(l);
 	}
-
 }
