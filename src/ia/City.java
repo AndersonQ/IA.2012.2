@@ -28,6 +28,14 @@ public class City
 	{
 		return new String(name);
 	}
+
+	@Override
+	public boolean equals(Object obj) 
+	{
+		City c = (City) obj;
+		
+		return this.name.equalsIgnoreCase(c.getName());
+	}
 	
 	
 }
