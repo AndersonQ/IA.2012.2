@@ -3,6 +3,7 @@ package ia;
 public class City 
 {
 	protected String name;
+	protected Colour c;
 
 	/**
 	 * @param name
@@ -37,5 +38,13 @@ public class City
 		return this.name.equalsIgnoreCase(c.getName());
 	}
 	
-	
+	public Colour getColour()
+	{
+		return c;
+	}
+
+	public void setColour(Colour c)
+	{
+		this.c = c;
+	}
 }
