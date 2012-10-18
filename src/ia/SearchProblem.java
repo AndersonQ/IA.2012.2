@@ -7,8 +7,8 @@ import java.util.List;
  * @author fenix
  *
  */
-public interface Problem 
+public interface SearchProblem 
 {
 	List<Object> expand(Object o);
-	Result process(Object o);
+	SearchResult process(Object o);
 }

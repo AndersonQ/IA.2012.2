@@ -7,7 +7,7 @@ import java.util.Set;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
-public class CitiesShortestPathWay implements Problem 
+public class CitiesShortestPathWay implements SearchProblem 
 {
 	UndirectedGraph<City, WeightCityLink> g;
 	
@@ -38,7 +38,7 @@ public class CitiesShortestPathWay implements Problem
 	
 
 	@Override
-	public Result process(Object o) 
+	public SearchResult process(Object o) 
 	{
 		// TODO Auto-generated method stub
 		return null;

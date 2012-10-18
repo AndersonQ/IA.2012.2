@@ -5,7 +5,7 @@ package ia;
  * @author fenix
  *
  */
-public class Result 
+public class SearchResult 
 {
 	private boolean success;
 
