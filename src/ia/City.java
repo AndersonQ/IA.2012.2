@@ -1,5 +1,10 @@
 package ia;
 
+/**
+ * Class to represent node
+ * @author fenix
+ *
+ */
 public class City 
 {
 	protected String name;
