@@ -7,6 +7,11 @@ import java.util.Stack;
 
 import org.jgrapht.UndirectedGraph;
 
+/**
+ * 
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ *
+ */
 public class DeepSearch implements SearchProblem {
 
 	/** The graph */

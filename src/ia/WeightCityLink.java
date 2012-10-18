@@ -5,7 +5,7 @@ import org.jgrapht.graph.DefaultEdge;
 
 /**
  * Edge of the Graph, the nodes are city  
- * @author Tiago
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
  *
  */
 public class WeightCityLink extends DefaultEdge 

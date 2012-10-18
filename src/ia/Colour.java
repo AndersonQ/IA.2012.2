@@ -2,7 +2,7 @@ package ia;
 
 /**
  * A control to walk into the graph
- * @author Tiago
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
  *
  */
 public enum Colour 

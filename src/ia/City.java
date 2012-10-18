@@ -2,7 +2,7 @@ package ia;
 
 /**
  * Class to represent node
- * @author Tiago
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
  *
  */
 public class City 
