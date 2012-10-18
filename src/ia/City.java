@@ -2,7 +2,7 @@ package ia;
 
 /**
  * Class to represent node
- * @author fenix
+ * @author Tiago
  *
  */
 public class City 

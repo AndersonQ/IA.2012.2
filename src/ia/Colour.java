@@ -2,7 +2,7 @@ package ia;
 
 /**
  * A control to walk into the graph
- * @author fenix
+ * @author Tiago
  *
  */
 public enum Colour 
