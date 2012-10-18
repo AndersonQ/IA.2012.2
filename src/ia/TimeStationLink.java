@@ -31,7 +31,7 @@ public class TimeStationLink extends DefaultEdge
 	@Override
 	public String toString()
 	{
-		return new String ("N:" + my_number + " " + this.getSource() + " <-- " + time + " --> " + this.getTarget());
+		return new String ("N:" + my_number + " " + this.getSource() + " <-- " + time + " min" + " --> " + this.getTarget());
 	}
 
 	public double getTime()
