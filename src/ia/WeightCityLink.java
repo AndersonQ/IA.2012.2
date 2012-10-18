@@ -8,7 +8,7 @@ public class WeightCityLink extends DefaultEdge
 	private static int count = 0;
 	protected UndirectedGraph<City, WeightCityLink> graph;
 	public int my_number;
-	protected int weight;
+	protected double weight;
 
 	/**
 	 * 
@@ -18,7 +18,7 @@ public class WeightCityLink extends DefaultEdge
 	/**
 	 * 
 	 */
-	public WeightCityLink(UndirectedGraph<City, WeightCityLink> graph, int weight) 
+	public WeightCityLink(UndirectedGraph<City, WeightCityLink> graph, double weight) 
 	{
 		super();
 		my_number = count ++;
@@ -39,7 +39,7 @@ public class WeightCityLink extends DefaultEdge
 		return graph.getEdgeTarget(this);
 	}
 
-	public int getWeight() 
+	public double getWeight() 
 	{
 		return weight;
 	}
