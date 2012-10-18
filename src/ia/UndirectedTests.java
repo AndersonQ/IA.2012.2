@@ -137,8 +137,8 @@ public class UndirectedTests
 		g.addEdge(c11, c23, new WeightCityLink(g, 21.5) );
 		g.addEdge(c11, c21, new WeightCityLink(g, 7.5) );
 		g.addEdge(c11, c43, new WeightCityLink(g, 11.9) );
-		/*g.addEdge(c11, c39, new WeightCityLink(g, passa por Itapecerica 46,8) );*/
-		/*g.addEdge(c11, c20, new WeightCityLink(g, passa por embu das artes 29,2) );*/
+		g.addEdge(c11, c39, new WeightCityLink(g, 46.8) );
+		g.addEdge(c11, c20, new WeightCityLink(g, 29.2) );
 		g.addEdge(c11, c13, new WeightCityLink(g, 14.1) );
 		g.addEdge(c11, c42, new WeightCityLink(g, 24) );
 		g.addEdge(c12, c40, new WeightCityLink(g, 19.2) );
@@ -170,7 +170,7 @@ public class UndirectedTests
 		g.addEdge(c19, c5, new WeightCityLink(g, 26.8) );
 		g.addEdge(c19, c34, new WeightCityLink(g, 42.4) );
 		g.addEdge(c20, c13, new WeightCityLink(g, 8.7) );
-		/*g.addEdge(c20, c11, new WeightCityLink(g, passa por embu das artes 29,2) );*/
+		g.addEdge(c20, c11, new WeightCityLink(g, 29.2) );
 		g.addEdge(c20, c39, new WeightCityLink(g, 22.4) );
 		g.addEdge(c20, c14, new WeightCityLink(g, 17.3) );
 		g.addEdge(c20, c40, new WeightCityLink(g, 36.5) );
@@ -190,7 +190,7 @@ public class UndirectedTests
 		g.addEdge(c23, c9, new WeightCityLink(g, 9.1) );
 		g.addEdge(c24, c39, new WeightCityLink(g, 18.8) );
 		g.addEdge(c24, c14, new WeightCityLink(g, 38.7) );
-		/*g.addEdge(c24, c40, new WeightCityLink(g, passa por São Lourenço 78,5) );*/
+		g.addEdge(c24, c40, new WeightCityLink(g,78.5) );
 		g.addEdge(c25, c17, new WeightCityLink(g, 18.7) );
 		g.addEdge(c25, c8, new WeightCityLink(g, 22.4) );
 		g.addEdge(c25, c40, new WeightCityLink(g, 34.1) );
@@ -203,7 +203,7 @@ public class UndirectedTests
 		g.addEdge(c27, c5, new WeightCityLink(g, 23.5) );
 		g.addEdge(c27, c22, new WeightCityLink(g, 20.7) );
 		g.addEdge(c27, c41, new WeightCityLink(g, 14.6) );
-		/*g.addEdge(c27, c36, new WeightCityLink(g, passa por várias cidades 64,7) );*/
+		g.addEdge(c27, c36, new WeightCityLink(g, 64.7) );
 		g.addEdge(c27, c7, new WeightCityLink(g, 19.9) );
 		g.addEdge(c27, c18, new WeightCityLink(g, 24.4) );
 		g.addEdge(c28, c40, new WeightCityLink(g, 29) );
@@ -216,11 +216,11 @@ public class UndirectedTests
 		g.addEdge(c30, c15, new WeightCityLink(g, 3.3) );
 		g.addEdge(c30, c41, new WeightCityLink(g, 5.1) );
 		g.addEdge(c31, c26, new WeightCityLink(g, 8.3) );
-		/*g.addEdge(c31, c36, new WeightCityLink(g, passa por Mauá 17,2) );*/
+		g.addEdge(c31, c36, new WeightCityLink(g, 7.2) );
 		g.addEdge(c31, c32, new WeightCityLink(g, 5.5) );
 		g.addEdge(c31, c41, new WeightCityLink(g, 28) );
 		g.addEdge(c32, c31, new WeightCityLink(g, 5.5) );
-		/*g.addEdge(c32, c36, new WeightCityLink(g, passa por Ribeirão Pires 20,8) );*/
+		g.addEdge(c32, c36, new WeightCityLink(g, 20.8) );
 		g.addEdge(c32, c41, new WeightCityLink(g, 30.3) );
 		g.addEdge(c33, c18, new WeightCityLink(g, 34.8) );
 		g.addEdge(c33, c7, new WeightCityLink(g, 23.6) );
@@ -231,14 +231,14 @@ public class UndirectedTests
 		g.addEdge(c35, c9, new WeightCityLink(g, 17.1) );
 		g.addEdge(c35, c29, new WeightCityLink(g, 14.6) );
 		g.addEdge(c35, c6, new WeightCityLink(g, 12.6) );
-		/*g.addEdge(c35, c40, new WeightCityLink(g, passa por Osasco 44,5) );*/
+		g.addEdge(c35, c40, new WeightCityLink(g, 44.5) );
 		g.addEdge(c36, c40, new WeightCityLink(g, 23.3) );
 		g.addEdge(c36, c38, new WeightCityLink(g, 6.7) );
 		g.addEdge(c36, c37, new WeightCityLink(g, 6.9) );
-		/*g.addEdge(c36, c27, new WeightCityLink(g, passa por várias cidades 64,7) );*/
-		/*g.addEdge(c36, c41, new WeightCityLink(g, passa por Mauá 33,8) );*/
-		/*g.addEdge(c36, c32, new WeightCityLink(g, passa por Ribeirão Pires 20,8) );*/
-		/*g.addEdge(c36, c31, new WeightCityLink(g, passa por Mauá 17,2) );*/
+		g.addEdge(c36, c27, new WeightCityLink(g, 647) );
+		g.addEdge(c36, c41, new WeightCityLink(g, 33.8) );
+		g.addEdge(c36, c32, new WeightCityLink(g, 20.8) );
+		g.addEdge(c36, c31, new WeightCityLink(g, 17.2) );
 		g.addEdge(c36, c26, new WeightCityLink(g, 9.3) );
 		g.addEdge(c37, c40, new WeightCityLink(g, 25.2) );
 		g.addEdge(c37, c38, new WeightCityLink(g, 9.8) );
@@ -247,7 +247,7 @@ public class UndirectedTests
 		g.addEdge(c38, c40, new WeightCityLink(g, 13.5) );
 		g.addEdge(c38, c36, new WeightCityLink(g, 6.7) );
 		g.addEdge(c38, c37, new WeightCityLink(g, 9.8) );
-		/*g.addEdge(c39, c11, new WeightCityLink(g, passa por Itapecerica 46,8) );*/
+		g.addEdge(c39, c11, new WeightCityLink(g, 46.8) );
 		g.addEdge(c39, c24, new WeightCityLink(g, 18.8) );
 		g.addEdge(c39, c14, new WeightCityLink(g, 20.7) );
 		g.addEdge(c39, c20, new WeightCityLink(g, 22.4) );
@@ -255,13 +255,13 @@ public class UndirectedTests
 		g.addEdge(c40, c25, new WeightCityLink(g, 34.1) );
 		g.addEdge(c40, c8, new WeightCityLink(g, 37.8) );
 		g.addEdge(c40, c9, new WeightCityLink(g, 46.3) );
-		/*g.addEdge(c40, c35, new WeightCityLink(g, passa por Osasco 44,5) );*/
+		g.addEdge(c40, c35, new WeightCityLink(g, 44.5) );
 		g.addEdge(c40, c28, new WeightCityLink(g, 29) );
 		g.addEdge(c40, c42, new WeightCityLink(g, 16.2) );
 		g.addEdge(c40, c13, new WeightCityLink(g, 37.7) );
 		g.addEdge(c40, c20, new WeightCityLink(g, 36.5) );
 		g.addEdge(c40, c14, new WeightCityLink(g, 49.4) );
-		/*g.addEdge(c40, c24, new WeightCityLink(g, passa por São Lourenço 78,5) );*/
+		g.addEdge(c40, c24, new WeightCityLink(g, 78.5) );
 		g.addEdge(c40, c37, new WeightCityLink(g, 25.2) );
 		g.addEdge(c40, c12, new WeightCityLink(g, 19.2) );
 		g.addEdge(c40, c38, new WeightCityLink(g, 13.5) );
@@ -274,7 +274,7 @@ public class UndirectedTests
 		g.addEdge(c41, c31, new WeightCityLink(g, 28) );
 		g.addEdge(c41, c32, new WeightCityLink(g, 30.3) );
 		g.addEdge(c41, c27, new WeightCityLink(g, 14.6) );
-		/*g.addEdge(c41, c36, new WeightCityLink(g, passa por Mauá 33,8) );*/
+		g.addEdge(c41, c36, new WeightCityLink(g, 33.8) );
 		g.addEdge(c42, c40, new WeightCityLink(g, 16.2) );
 		g.addEdge(c42, c11, new WeightCityLink(g, 24) );
 		g.addEdge(c42, c13, new WeightCityLink(g, 16.1) );
