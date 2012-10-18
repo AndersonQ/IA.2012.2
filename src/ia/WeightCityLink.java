@@ -3,6 +3,11 @@ package ia;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
 
+/**
+ * Edge of the Graph, the nodes are city  
+ * @author fenix
+ *
+ */
 public class WeightCityLink extends DefaultEdge 
 {
 	private static int count = 0;
