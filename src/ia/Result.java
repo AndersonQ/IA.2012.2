@@ -2,7 +2,7 @@ package ia;
 
 /**
  * A class to keep the result
- * @author fenix
+ * @author Tiago
  *
  */
 public class Result 

@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Description of the problem to be solved
- * @author fenix
+ * @author Tiago
  *
  */
 public interface Problem 
