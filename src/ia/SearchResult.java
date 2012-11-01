@@ -8,5 +8,17 @@ package ia;
 public class SearchResult 
 {
 	private boolean success;
+	
+	public SearchResult(boolean result)
+	{
+		success = result;
+	}
 
+	public boolean isSuccess() {
+		return success;
+	}
+
+	public void setSuccess(boolean success) {
+		this.success = success;
+	}
 }

@@ -5,7 +5,7 @@ package ia;
  * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
  *
  */
-public class City 
+public class City
 {
 	protected String name;
 	protected Colour c;

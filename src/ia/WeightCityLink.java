@@ -8,7 +8,7 @@ import org.jgrapht.graph.DefaultEdge;
  * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
  *
  */
-public class WeightCityLink extends DefaultEdge 
+public class WeightCityLink extends DefaultEdge implements Comparable
 {
 	private static int count = 0;
 	protected UndirectedGraph<City, WeightCityLink> graph;
@@ -32,14 +32,32 @@ public class WeightCityLink extends DefaultEdge
 		this.weight = weight;
 	}
 
+	/**
+	 * A compare method to be used with a PriorityQueue
+	 * @param o a WeightCityLink object 
+	 * @return 0 if the weight of both are equal, -1 if 'o' weight is bigger, and 1 otherwise
+	 */
 	@Override
-	protected City getSource() 
+	public int compareTo(Object o) {
+		if(this.weight < ((WeightCityLink)o).getWeight())
+		{
+			return -1;
+		}
+		if(this.weight > ((WeightCityLink)o).getWeight())
+		{
+			return 1;
+		}
+		return 0;
+	}
+	
+	@Override
+	public City getSource() 
 	{
 		return graph.getEdgeSource(this); 
 	}
 
 	@Override
-	protected City getTarget() 
+	public City getTarget() 
 	{
 		return graph.getEdgeTarget(this);
 	}

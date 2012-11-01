@@ -1,4 +1,7 @@
-package ia;
+package ia.tests;
+
+import ia.City;
+import ia.WeightCityLink;
 
 import java.util.Set;
 
@@ -305,5 +308,8 @@ public class UndirectedTests
 		s = g.edgesOf(c4);
 		for(WeightCityLink l: s)
 			System.out.println(l);
+		
+		//Testing Uniform Cost Search 
+		UniformCostTest  uniform = new UniformCostTest(g);
 	}
 }
