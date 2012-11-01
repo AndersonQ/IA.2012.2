@@ -5,7 +5,7 @@ import org.jgrapht.graph.DefaultEdge;
 
 /**
  * 
- * @author Tiago
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
  *
  */
 public class PriceStationLink extends DefaultEdge 
