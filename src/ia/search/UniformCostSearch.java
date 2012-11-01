@@ -1,4 +1,9 @@
-package ia;
+package ia.search;
+
+import ia.City;
+import ia.SearchProblem;
+import ia.SearchResult;
+import ia.WeightCityLink;
 
 import java.util.LinkedList;
 import java.util.List;
