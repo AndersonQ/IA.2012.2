@@ -55,7 +55,7 @@ public class UniformCostSearch implements SearchProblem{
 			}
 		}
 		
-		//Copy all elements in orderedlist to list
+		//Copy all elements in ordered list to list
 		for(WeightCityLink edge: orderedlist)
 		{
 			list.add(edge);
