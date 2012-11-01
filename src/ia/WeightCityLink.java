@@ -51,13 +51,13 @@ public class WeightCityLink extends DefaultEdge implements Comparable
 	}
 	
 	@Override
-	protected City getSource() 
+	public City getSource() 
 	{
 		return graph.getEdgeSource(this); 
 	}
 
 	@Override
-	protected City getTarget() 
+	public City getTarget() 
 	{
 		return graph.getEdgeTarget(this);
 	}
