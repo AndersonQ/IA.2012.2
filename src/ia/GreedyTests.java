@@ -72,8 +72,10 @@ public class GreedyTests
         g.addEdge(ct8, ct2, new WeightCityLink(g, 1) );
         g.addEdge(ct8, ct7, new WeightCityLink(g, 1) );
 
+        //Franco da Rocha -> Santo André
         GreedySearch search = new GreedySearch(g, ct4, ct6, h);
-
+        search.expand(ct4);
+        
     }
 
 }
