@@ -1,4 +1,7 @@
-package ia;
+package atest;
+
+import ia.City;
+import ia.WeightCityLink;
 
 import java.util.Set;
 
