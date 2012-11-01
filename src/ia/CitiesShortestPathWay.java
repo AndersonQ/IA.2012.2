@@ -41,7 +41,7 @@ public class CitiesShortestPathWay implements SearchProblem
 		return l;
 	}
 	
-
+	
 	@Override
 	public SearchResult process(Object o) 
 	{
