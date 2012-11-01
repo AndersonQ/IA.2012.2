@@ -9,11 +9,21 @@ import org.jgrapht.UndirectedGraph;
 
 /**
  * 
- * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ * @author Anderson Queiroz, Fernando Zucatelli, Jo��o Coutinho, Tiago Queiroz
  *
  */
+
+
+
+
+
 public class DeepSearch implements SearchProblem {
 
+	
+	
+	
+	
+	
 	/** The graph */
 	private UndirectedGraph<City, WeightCityLink> graph;
 	/** A stack to walk trough graph */ 
@@ -27,6 +37,42 @@ public class DeepSearch implements SearchProblem {
 	{
 		this.graph = graph;
 		this.stack = new Stack<City>();
+		
+	
+		
+			}
+	
+	public City run(City inicio, City fim){
+		City temp, filho; 
+		Set<WeightCityLink> vert_col ; //Collections de vértice
+		stack.add(inicio); 
+		
+		while(!stack.empty()){ 
+			temp = stack.pop();
+			temp.setColour(Colour.GRAY);
+			
+			if(temp == fim){
+				return temp;
+			}
+			
+			vert_col = graph.edgesOf(temp);
+			
+			for(WeightCityLink e: vert_col){
+				filho = e.getTarget();
+				
+				if(filho.c.equals("WHITE")){
+					stack.add(filho);
+				}
+				
+				temp.setColour(Colour.BLACK);;
+				
+			}			
+			
+			
+			
+		}
+		
+		return null;
 	}
 	
 	@Override
@@ -53,6 +99,8 @@ public class DeepSearch implements SearchProblem {
 
 	@Override
 	public SearchResult process(Object o) {
+		
+		
 		
 		return null;
 	}
