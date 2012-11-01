@@ -1,5 +1,8 @@
 package ia;
 
+import ia.search.SearchProblem;
+import ia.search.SearchResult;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;

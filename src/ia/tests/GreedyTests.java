@@ -1,4 +1,8 @@
-package ia;
+package ia.tests;
+
+import ia.City;
+import ia.WeightCityLink;
+import ia.search.GreedySearch;
 
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;

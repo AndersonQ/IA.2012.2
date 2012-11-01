@@ -8,7 +8,7 @@ package ia;
 public class City
 {
 	protected String name;
-	protected Colour c;
+	public Colour c;
 
 	/**
 	 * @param name

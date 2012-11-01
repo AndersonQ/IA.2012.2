@@ -1,4 +1,4 @@
-package ia;
+package ia.search;
 
 /**
  * A class to keep the result
