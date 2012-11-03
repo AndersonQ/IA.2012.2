@@ -36,18 +36,18 @@ public class UniformCostSearch implements SearchProblem{
 	@Override
 	public List<Object> expand(Object o) {
 		//Cast to city
-		City city = (City) o;
+		City node = (City) o;
 		//A Set to keep neighbour
 		Set<WeightCityLink> neighbour;
 		//The list to be returned
 		List<Object> list = new LinkedList<Object>();
 		
 		//Get neighbours
-		neighbour = graph.edgesOf(city);
+		neighbour = graph.edgesOf(node);
 		
 		for(WeightCityLink c : neighbour)
 		{
-			if(!orderedlist.contains(c.getTarget()))
+			if(!orderedlist.contains(c))
 			{
 				orderedlist.add(c);
 			}
