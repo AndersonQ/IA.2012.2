@@ -75,10 +75,10 @@ public class GreedySearch  implements SearchProblem
             }
         });
 
-        System.out.println("Nodes sorted by heuristic:");
+//        System.out.println("Nodes sorted by heuristic:");
         for(City c: sorted)
         {
-            System.out.println(c);
+//            System.out.println(c);
             ret.add((Object) c);
         }
 
@@ -87,7 +87,7 @@ public class GreedySearch  implements SearchProblem
 
     public SearchResult process(Object o)
     {
-        return null;
+        return new SearchResult(destiny.equals(o));
     }
 
     private double getHeuristic(City src)
