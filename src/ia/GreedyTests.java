@@ -76,6 +76,10 @@ public class GreedyTests
         GreedySearch search = new GreedySearch(g, ct4, ct6, h);
         search.expand(ct4);
         
+        System.out.printf("\n\n");
+        //Diadema -> Santo André
+        search = new GreedySearch(g, ct2, ct6, h);
+        search.expand(ct2);
     }
 
 }
