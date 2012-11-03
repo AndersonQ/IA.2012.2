@@ -32,10 +32,6 @@ public class GreedySearch  implements SearchProblem
             cities.add(c.getName());
 
         Collections.sort(cities);
-
-        System.out.printf("Cities in order:\n");
-        for(String c: cities)
-            System.out.println(c);
     }
 
     public List<Object> expand(Object o)
