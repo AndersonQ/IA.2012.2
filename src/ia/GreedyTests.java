@@ -1,5 +1,8 @@
 package ia;
 
+import java.util.List;
+import java.util.Stack;
+
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
@@ -75,11 +78,54 @@ public class GreedyTests
         //Franco da Rocha -> Santo André
         GreedySearch search = new GreedySearch(g, ct4, ct6, h);
         search.expand(ct4);
-        
+
         System.out.printf("\n\n");
         //Diadema -> Santo André
         search = new GreedySearch(g, ct2, ct6, h);
         search.expand(ct2);
+
+        System.out.printf("\n\n");
+        SearchProblem sp = new GreedySearch(g, ct2, ct6, h);
+        sp.expand(ct2);
+
+        /* Loop to solve the problem */
+        Stack<City> s = new Stack<City>();
+        City c = null;
+        List<Object> cl = null;
+        SearchResult r = null;
+
+        System.out.println(g);
+        //Diadema -> Santo André
+        System.out.printf("Trying to go to: %s\n", ct3);
+        sp = new GreedySearch(g, ct2, ct3, h);
+        s.push(ct2);
+        while(!s.empty())
+        {
+            c = s.pop();
+            c.setColour(Colour.GRAY);
+            cl = sp.expand(c);
+            for(Object node: cl)
+            {
+                if( ((City)node).getColour() == Colour.WHITE)
+                    s.push((City)node);
+            }
+
+            if( c.getColour() != Colour.BLACK)
+            {
+                System.out.println("Processing: " + c + " " + c.getColour());
+                r = sp.process(c);
+                c.setColour(Colour.BLACK);
+                System.out.println("Colour: " + c + " " + c.getColour() + "\n\n");
+            }
+
+            if(r.isSuccess())
+                break;
+        }
+
+        if(r.isSuccess())
+            System.out.println("Destiny: \"" + c + "\" found!");
+        else
+            System.out.printf("Destiny not found!\n");
     }
 
 }
