@@ -17,6 +17,7 @@ public class City
 	{
 		super();
 		this.name = name;
+		this.c = Colour.WHITE;
 	}
 	
 	public String getName()
