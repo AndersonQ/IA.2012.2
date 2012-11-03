@@ -39,9 +39,9 @@ public class City
 	@Override
 	public boolean equals(Object obj) 
 	{
-		City c = (City) obj;
+		City ct = (City) obj;
 		
-		return this.name.equalsIgnoreCase(c.getName());
+		return this.name.equalsIgnoreCase(ct.getName());
 	}
 	
 	public Colour getColour()
