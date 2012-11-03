@@ -1,8 +1,10 @@
 package ia.tests;
 
 import ia.City;
+import ia.Colour;
 import ia.WeightCityLink;
 import ia.search.GreedySearch;
+import ia.search.SearchResult;
 
 import java.util.List;
 import java.util.Stack;
