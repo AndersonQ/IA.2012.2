@@ -1,8 +1,6 @@
 package ia.search;
 
 import ia.City;
-import ia.SearchProblem;
-import ia.SearchResult;
 import ia.WeightCityLink;
 
 import java.util.LinkedList;
@@ -55,7 +53,7 @@ public class UniformCostSearch implements SearchProblem{
 			}
 		}
 		
-		//Copy all elements in orderedlist to list
+		//Copy all elements in ordered list to list
 		for(WeightCityLink edge: orderedlist)
 		{
 			list.add(edge);

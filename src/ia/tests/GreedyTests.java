@@ -1,4 +1,8 @@
-package ia;
+package ia.tests;
+
+import ia.City;
+import ia.WeightCityLink;
+import ia.search.GreedySearch;
 
 import java.util.List;
 import java.util.Stack;

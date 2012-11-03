@@ -1,4 +1,4 @@
-package ia;
+package ia.search;
 
 import java.util.List;
 

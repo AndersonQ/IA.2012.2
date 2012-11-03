@@ -1,4 +1,8 @@
-package ia;
+package ia.search;
+
+import ia.City;
+import ia.Colour;
+import ia.WeightCityLink;
 
 import java.util.LinkedList;
 import java.util.List;

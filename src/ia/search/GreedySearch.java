@@ -1,4 +1,7 @@
-package ia;
+package ia.search;
+
+import ia.City;
+import ia.WeightCityLink;
 
 import java.util.ArrayList;
 import java.util.Collection;
