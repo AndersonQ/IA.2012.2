@@ -22,16 +22,19 @@ public class UniformCostTest {
 		cities = graph.vertexSet();
 		Object[] citiesarray = cities.toArray();
 		
-		City city = (City) citiesarray[0];
-		
-		uni = new UniformCostSearch(graph, city);
-		
 		System.out.println("\nTesting UniformCostSearch...");
 		
-		System.out.println("City " + city);
-		Set<WeightCityLink> neighbour = graph.edgesOf(city);
-		System.out.println("Edges: " + neighbour);
-		System.out.println(uni.expand(city));
+		for(int i = 0; i < 5; i++)
+		{
+			City city = (City) citiesarray[i];
+			
+			uni = new UniformCostSearch(graph, city);
+			
+			System.out.println("\nCity " + city);
+			Set<WeightCityLink> neighbour = graph.edgesOf(city);
+			System.out.println("Edges: " + neighbour);
+			System.out.println("Ordered by cost: " + uni.expand(city));
+		}
 	}
 	
 }
