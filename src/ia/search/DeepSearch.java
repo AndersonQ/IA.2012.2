@@ -13,7 +13,7 @@ import org.jgrapht.UndirectedGraph;
 
 /**
  * 
- * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ * @author Anderson Queiroz, Fernando Zucatelli, Jo��o Coutinho, Tiago Queiroz
  *
  */
 
@@ -63,10 +63,10 @@ public class DeepSearch implements SearchProblem {
 			
 		}
 	
-	public City run(City inicio, City fim){
+	public Stack run(City inicio, City fim){
 		
 		City temp, filho; 
-		Set<WeightCityLink> vert_col ; //Collections de v��rtice
+		Set<WeightCityLink> vert_col ; //Collections de v������rtice
 		stack.add(inicio); 
 		paint_white(graph);
 		
@@ -75,7 +75,7 @@ public class DeepSearch implements SearchProblem {
 			temp.setColour(Colour.GRAY);
 			
 			if(temp == fim){
-				return temp;
+				return stack;
 			}
 			
 			vert_col = graph.edgesOf(temp);

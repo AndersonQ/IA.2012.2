@@ -14,8 +14,7 @@ import org.jgrapht.UndirectedGraph;
 public class BreadthSearch implements SearchProblem {
 	
 	
-	
-	
+
 	
 	/** The graph */
 	private UndirectedGraph<City, WeightCityLink> graph;
@@ -48,9 +47,9 @@ public class BreadthSearch implements SearchProblem {
 			
 		}
 	
-	public City run(City inicio, City fim){
+	public List run(City inicio, City fim){
 		City temp, filho; 
-		Set<WeightCityLink> vert_col ; //Collections de v��rtice
+		Set<WeightCityLink> vert_col ; //Collections de v������rtice
 		paint_white(graph);
 		list.add(inicio); 
 		
@@ -59,6 +58,11 @@ public class BreadthSearch implements SearchProblem {
 		while(!list.isEmpty()){
 			temp = list.remove(0);//Retira da fila
 			vert_col = graph.edgesOf(temp); //
+			
+			if(temp == fim){
+				return list;
+				
+			}
 			
 			for(WeightCityLink e:vert_col){
 				filho = e.getTarget();
@@ -73,11 +77,8 @@ public class BreadthSearch implements SearchProblem {
 				
 			}
 			
-			
-			
 		}
-		
-		
+	
 		
 		return null;
 	}
