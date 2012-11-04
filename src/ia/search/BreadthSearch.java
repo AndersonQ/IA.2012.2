@@ -11,18 +11,7 @@ import java.util.Stack;
 
 import org.jgrapht.UndirectedGraph;
 
-/**
- * 
- * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
- *
- */
-
-
-
-
-
-public class DeepSearch implements SearchProblem {
-
+public class BreadthSearch implements SearchProblem {
 	
 	
 	
@@ -31,24 +20,20 @@ public class DeepSearch implements SearchProblem {
 	/** The graph */
 	private UndirectedGraph<City, WeightCityLink> graph;
 	/** A stack to walk trough graph */ 
-	private Stack<City> stack;
+	private List<City> list;
 	
 	/**
 	 * Deep search to search problem
 	 * @param graph
 	 */
-
-
-	
-	public DeepSearch(UndirectedGraph<City, WeightCityLink> graph)
+	public BreadthSearch(UndirectedGraph<City, WeightCityLink> graph)
 	{
 		this.graph = graph;
-		this.stack = new Stack<City>();
+		this.list = new LinkedList<City>();
 		
 	
 		
 			}
-	
 	
 	public void paint_white(UndirectedGraph<City,WeightCityLink> graph){
 		
@@ -64,36 +49,35 @@ public class DeepSearch implements SearchProblem {
 		}
 	
 	public City run(City inicio, City fim){
-		
 		City temp, filho; 
 		Set<WeightCityLink> vert_col ; //Collections de v��rtice
-		stack.add(inicio); 
 		paint_white(graph);
+		list.add(inicio); 
 		
-		while(!stack.empty()){ 
-			temp = stack.pop();
-			temp.setColour(Colour.GRAY);
+		inicio.setColour(Colour.GRAY);
+		
+		while(!list.isEmpty()){
+			temp = list.remove(0);//Retira da fila
+			vert_col = graph.edgesOf(temp); //
 			
-			if(temp == fim){
-				return temp;
-			}
-			
-			vert_col = graph.edgesOf(temp);
-			
-			for(WeightCityLink e: vert_col){
+			for(WeightCityLink e:vert_col){
 				filho = e.getTarget();
 				
-				if(filho.c.equals("WHITE")){
-					stack.add(filho);
+				if(filho.getColour() == Colour.WHITE){
+					filho.setColour(Colour.GRAY);
+					list.add(filho);
+					
 				}
 				
-				temp.setColour(Colour.BLACK);;
+				temp.setColour(Colour.BLACK);
 				
-			}			
+			}
 			
 			
 			
 		}
+		
+		
 		
 		return null;
 	}
@@ -127,5 +111,6 @@ public class DeepSearch implements SearchProblem {
 		
 		return null;
 	}
+
 
 }
