@@ -9,6 +9,7 @@ public class City
 {
 	protected String name;
 	public Colour c;
+	City father;
 
 	/**
 	 * @param name
@@ -18,6 +19,7 @@ public class City
 		super();
 		this.name = name;
 		this.c = Colour.WHITE;
+		father = null;
 	}
 	
 	public String getName()
@@ -53,4 +55,14 @@ public class City
 	{
 		this.c = c;
 	}
+
+    public City getFather()
+    {
+        return father;
+    }
+
+    public void setFather(City father)
+    {
+        this.father = father;
+    }
 }
