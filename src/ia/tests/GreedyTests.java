@@ -7,6 +7,7 @@ import ia.search.GreedySearch;
 import ia.search.SearchProblem;
 import ia.search.SearchResult;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -95,28 +96,40 @@ public class GreedyTests
         SearchProblem sp = new GreedySearch(g, ct2, ct6, h);
         sp.expand(ct2);
 
-        /* Loop to solve the problem */
+        /*
+         * Loop to solve the problem
+         */
+
+        /* Auxiliar dat structs */
         Stack<City> s = new Stack<City>();
         City c = null;
         List<Object> cl = null;
         SearchResult r = null;
 
         System.out.println(g);
-        //Diadema -> Santo André
+        //Diadema -> Guarulhos
         System.out.printf("Trying to go to: %s\n", ct3);
         sp = new GreedySearch(g, ct2, ct3, h);
         s.push(ct2);
         while(!s.empty())
         {
+            /* Expand */
             c = s.pop();
             c.setColour(Colour.GRAY);
             cl = sp.expand(c);
+
+            /* Put all non processed nodes in the stack */
             for(Object node: cl)
             {
                 if( ((City)node).getColour() == Colour.WHITE)
                     s.push((City)node);
+
+                /* Set the father of the expanded node to c */
+                if( (((City)node).getFather() == null) )
+                    ((City)node).setFather(c);
             }
 
+            /* If c is not BLACK process it and make it BLACK */
             if( c.getColour() != Colour.BLACK)
             {
                 System.out.println("Processing: " + c + " " + c.getColour());
@@ -125,12 +138,37 @@ public class GreedyTests
                 System.out.println("Colour: " + c + " " + c.getColour() + "\n\n");
             }
 
+            /* If success break */
             if(r.isSuccess())
                 break;
         }
 
+        /* If the loop ended in success, build the path */
         if(r.isSuccess())
+        {
             System.out.println("Destiny: \"" + c + "\" found!");
+            List<City> rpath = new LinkedList<City>();
+            List<City> path = new LinkedList<City>();
+
+            /*
+             * Build the path form source to destiny
+             */
+            while(!((GreedySearch)sp).getSource().equals(c))
+            {
+                rpath.add(c);
+                c = c.getFather();
+            }
+
+            /* Reverse the path */
+            path.add(((GreedySearch)sp).getSource());
+            for(int i = rpath.size() - 1; i >=0; i--)
+                path.add(rpath.get(i));
+
+            /* Print the path */
+            System.out.printf("\nPath from %s to %s is:\n", ((GreedySearch)sp).getSource(), ((GreedySearch)sp).getDestiny());
+            for(City vc: path)
+                System.out.println(vc);
+        }
         else
             System.out.printf("Destiny not found!\n");
     }
