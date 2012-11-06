@@ -103,4 +103,14 @@ public class GreedySearch  implements SearchProblem
         return h[s][d];
     }
 
+    public City getDestiny()
+    {
+        return destiny;
+    }
+
+    public City getSource()
+    {
+        return source;
+    }
+
 }
