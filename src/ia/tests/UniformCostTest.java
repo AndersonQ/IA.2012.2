@@ -15,6 +15,11 @@ import ia.search.UniformCostSearch;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
+/**
+ * 
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ *
+ */
 public class UniformCostTest {
 
 	UndirectedGraph<City, WeightCityLink> graph;

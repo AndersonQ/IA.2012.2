@@ -45,7 +45,7 @@ public class DeepSearch implements SearchProblem {
 	public Stack run(City inicio, City fim){
 
 		City temp, filho; 
-		Set<WeightCityLink> vert_col ; //Collections de v������rtice
+		Set<WeightCityLink> vert_col ; //Collections de vértice
 		stack.add(inicio); 
 		paint_white(graph);
 
