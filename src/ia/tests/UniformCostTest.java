@@ -42,13 +42,6 @@ public class UniformCostTest {
 			System.out.println("Ordered by cost: " + uni.expand(city));			
 		}
 		
-		
-		
-		
-		
-		
-		
-		
 		UndirectedGraph<City, WeightCityLink> g = new SimpleGraph<City, WeightCityLink>(WeightCityLink.class);
         City ct1,ct2,ct3,ct4,ct5,ct6,ct7,ct8;
                 
