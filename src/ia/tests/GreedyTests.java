@@ -83,33 +83,18 @@ public class GreedyTests
         g.addEdge(ct8, ct2, new WeightCityLink(g, 1) );
         g.addEdge(ct8, ct7, new WeightCityLink(g, 1) );
 
-        //Franco da Rocha -> Santo André
-        GreedySearch search = new GreedySearch(g, ct4, ct6, h);
-        search.expand(ct4);
-
-        System.out.printf("\n\n");
-        //Diadema -> Santo André
-        search = new GreedySearch(g, ct2, ct6, h);
-        search.expand(ct2);
-
-        System.out.printf("\n\n");
-        SearchProblem sp = new GreedySearch(g, ct2, ct6, h);
-        sp.expand(ct2);
-
         /*
          * Loop to solve the problem
          */
 
-        /* Auxiliar dat structs */
+        /* Auxiliar data structs */
         Stack<City> s = new Stack<City>();
         City c = null;
         List<Object> cl = null;
         SearchResult r = null;
-
-        System.out.println(g);
         //Diadema -> Guarulhos
-        System.out.printf("Trying to go to: %s\n", ct3);
-        sp = new GreedySearch(g, ct2, ct3, h);
+        System.out.printf("Trying to go to: %s from %s\n", ct3, ct2);
+        SearchProblem sp = new GreedySearch(g, ct2, ct3, h);
         s.push(ct2);
         while(!s.empty())
         {
@@ -132,10 +117,8 @@ public class GreedyTests
             /* If c is not BLACK process it and make it BLACK */
             if( c.getColour() != Colour.BLACK)
             {
-                System.out.println("Processing: " + c + " " + c.getColour());
                 r = sp.process(c);
                 c.setColour(Colour.BLACK);
-                System.out.println("Colour: " + c + " " + c.getColour() + "\n\n");
             }
 
             /* If success break */
@@ -172,5 +155,4 @@ public class GreedyTests
         else
             System.out.printf("Destiny not found!\n");
     }
-
 }
