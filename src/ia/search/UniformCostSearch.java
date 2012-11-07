@@ -3,6 +3,8 @@ package ia.search;
 import ia.City;
 import ia.WeightCityLink;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
@@ -23,13 +25,17 @@ public class UniformCostSearch implements SearchProblem{
 	private UndirectedGraph<City, WeightCityLink> graph;
 	/** A ordered list to choose the low cost edge */
 	PriorityQueue<WeightCityLink> orderedlist;
-	/** The goal */
-	City goal;
+	//List<City> orderedlist;
+	/** The source city */
+	City source;
+	/** The target city */
+	City target;
 
-	public UniformCostSearch(UndirectedGraph<City, WeightCityLink> graph, City goal)
+	public UniformCostSearch(UndirectedGraph<City, WeightCityLink> graph, City target, City source)
 	{
 		this.graph = graph;
-		this.goal = goal;
+		this.target = target;
+		this.source = source;
 		this.orderedlist = new PriorityQueue<WeightCityLink>();
 	}
 	
@@ -56,7 +62,17 @@ public class UniformCostSearch implements SearchProblem{
 		//Copy all elements in ordered list to list
 		for(WeightCityLink edge: orderedlist)
 		{
-			list.add(edge);
+			City source = edge.getSource();
+			City target = edge.getTarget();
+			
+			if(source != node)
+			{
+				list.add(source);
+			}
+			if(target != node)
+			{
+				list.add(target);
+			}
 		}
 		
 		return list;
@@ -65,13 +81,17 @@ public class UniformCostSearch implements SearchProblem{
 	@Override
 	public SearchResult process(Object o) {
 		City city = (City) o;
-		
-		//city is the goal!
-		if(goal.getName().equals(city.getName()))
-		{
-			return new SearchResult(true);
-		}
-		//otherwise, fail
-		return new SearchResult(false);
+		//city is the goal true, otherwise, fail
+		return new SearchResult(this.target.getName().equals(city.getName()));
 	}
+
+	public City getSource() {
+		return source;
+	}
+
+	public City getTarget() {
+		return target;
+	}
+	
+	
 }
