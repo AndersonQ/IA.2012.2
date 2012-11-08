@@ -134,21 +134,17 @@ public class ExecuteBreathStation {
         System.out.printf("(Largura) Indo de %s para %s\n", e1, e16);
         SearchProblem sp = new DeepSearchStations(g, e1, e16);
 
-//        stack.push(e1);
         stack.add(e1);
         while(!stack.isEmpty())
         {
             /* Expand */
-            //c = list.pop();
             c = stack.remove();
-//            System.out.println("GOT: " + c);
             c.setColour(Colour.GRAY);
             cl = sp.expand(c);
 
             /* Put all non processed nodes in the queue */
             for(Object node: cl)
             {
-//                System.out.printf("Expanded %s (%s) from %s\n", (Station)node, ((Station)node).getColour(), c);
                 if( ((Station)node).getColour() == Colour.WHITE)
                     stack.add((Station)node);
 
