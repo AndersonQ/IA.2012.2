@@ -38,12 +38,14 @@ import org.jgrapht.graph.SimpleGraph;
  * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
  *
  */
-public class ExecuteDeepStation {
-
-    public ExecuteDeepStation(){
+public class ExecuteDeepStation
+{
+    public ExecuteDeepStation()
+    {
     }
 
-    public static void main(String[] args){
+    public void run()
+    {
 
         UndirectedGraph<Station, TimeStationLink> g = new SimpleGraph<Station, TimeStationLink>(TimeStationLink.class);
         Station e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16;
@@ -119,8 +121,6 @@ public class ExecuteDeepStation {
 
         g.addEdge(e15, e16, new TimeStationLink(g, 0) );
 
-        System.out.print("\nSolving a problem: ");
-
         /*
          * Loop to solve the problem
          */
@@ -138,16 +138,13 @@ public class ExecuteDeepStation {
         while(!stack.isEmpty())
         {
             /* Expand */
-            //c = list.pop();
             c = stack.pop();
-//            System.out.println("GOT: " + c);
             c.setColour(Colour.GRAY);
             cl = sp.expand(c);
 
             /* Put all non processed nodes in the queue */
             for(Object node: cl)
             {
-//                System.out.printf("Expanded %s (%s) from %s\n", (Station)node, ((Station)node).getColour(), c);
                 if( ((Station)node).getColour() == Colour.WHITE)
                     stack.push((Station)node);
 

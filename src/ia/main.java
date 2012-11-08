@@ -180,24 +180,25 @@ public class main
             case 5:
                 //Busca em profundidade USP
                 dss = new ExecuteDeepStation();
-                cities = dss.getCityNames();
+                //cities = dss.getCityNames();
 
-                System.out.printf("\nEscolha a cidade da partida:\n");
-                for(i = 0; i < cities.length; i++)
-                    System.out.printf("%d - %s\n", i, cities[i]);
-                System.out.printf("> ");
-                src = sc.nextInt();
-
-                System.out.printf("\nEscolha a cidade de destino:\n");
-                for(i = 0; i < cities.length; i++)
-                    if(i != src)
-                        System.out.printf("%d - %s\n", i, cities[i]);
-                System.out.printf("> ");
-                dst = sc.nextInt();
+//                System.out.printf("\nEscolha a cidade da partida:\n");
+//                for(i = 0; i < cities.length; i++)
+//                    System.out.printf("%d - %s\n", i, cities[i]);
+//                System.out.printf("> ");
+//                src = sc.nextInt();
+//
+//                System.out.printf("\nEscolha a cidade de destino:\n");
+//                for(i = 0; i < cities.length; i++)
+//                    if(i != src)
+//                        System.out.printf("%d - %s\n", i, cities[i]);
+//                System.out.printf("> ");
+//                dst = sc.nextInt();
+                System.out.printf("Indo de CPTM Santo André para USP\n");
 
                 try
                 {
-                	dss.run(src, dst);
+                	dss.run();
                 }
                 catch(Exception e)
                 {
