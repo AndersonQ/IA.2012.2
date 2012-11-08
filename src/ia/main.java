@@ -58,8 +58,9 @@ public class main
             System.out.printf("4 - Busca gulosa\n");
             System.out.printf("\nCaminhos da UFABC a para USP\n");
             System.out.printf("5 - Busca em profundidade CPTM\n");
-            System.out.printf("6 - Busca em largura\n");
+            System.out.printf("6 - Busca em largura CPTM\n");
             System.out.printf("7 - Busca em profundidade EMTU\n");
+            System.out.printf("8 - Busca em largura EMTU\n");
             System.out.printf("0 - Sair\n");
             System.out.printf("> ");
             op = sc.nextInt();            
@@ -204,7 +205,7 @@ public class main
 
                 try
                 {
-                    dbs.run();
+                    dbs.run(1, 0);
                 }
                 catch(Exception e)
                 {
@@ -221,6 +222,22 @@ public class main
                 try
                 {
                     dss.run(2, 0);
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                    System.exit(1);
+                }
+                break;
+                
+            case 8:
+                //Busca em largura USP EMTU
+                dbs = new ExecuteBreathStation();
+                System.out.printf("Indo de EMTU Santo André para USP\n");
+
+                try
+                {
+                    dbs.run(2, 0);
                 }
                 catch(Exception e)
                 {

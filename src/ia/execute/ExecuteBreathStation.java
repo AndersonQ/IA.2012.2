@@ -46,10 +46,10 @@ public class ExecuteBreathStation implements Execute
     }
 
 	public void run(int src, int dest) throws Exception {
-		run();		
+		run(src);		
 	}
 	
-    public void run()
+    private void run(int src)
     {
         UndirectedGraph<Station, TimeStationLink> g = new SimpleGraph<Station, TimeStationLink>(TimeStationLink.class);
         Station e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16;
@@ -125,8 +125,6 @@ public class ExecuteBreathStation implements Execute
 
         g.addEdge(e15, e16, new TimeStationLink(g, 0) );
 
-        System.out.print("\nSolving a problem: ");
-
         /*
          * Loop to solve the problem
          */
@@ -136,11 +134,21 @@ public class ExecuteBreathStation implements Execute
         Station c = null;
         List<Object> cl = null;
         SearchResult r = null;
+        SearchProblem sp;
 
-        System.out.printf("(Largura) Indo de %s para %s\n", e1, e16);
-        SearchProblem sp = new DeepSearchStations(g, e1, e16);
+        if(src == 1)
+        {
+            System.out.printf("(Largura) Indo de %s para %s\n", e1, e16);
+            sp = new DeepSearchStations(g, e1, e16);
+            stack.add(e1);
+        }
+        else
+        {
+            System.out.printf("(Largura) Indo de %s para %s\n", e2, e16);
+            sp = new DeepSearchStations(g, e2, e16);
+            stack.add(e2);
+        }
 
-        stack.add(e1);
         while(!stack.isEmpty())
         {
             /* Expand */
@@ -174,7 +182,7 @@ public class ExecuteBreathStation implements Execute
         /* If the loop ended in success, build the path */
         if(r.isSuccess())
         {
-            System.out.println("Destiny: \"" + c + "\" found!");
+            System.out.println("Destino: \"" + c + "\" encontrado!");
             List<Station> rpath = new LinkedList<Station>();
             List<Station> path = new LinkedList<Station>();
 
@@ -193,12 +201,12 @@ public class ExecuteBreathStation implements Execute
                 path.add(rpath.get(i));
 
             /* Print the path */
-            System.out.printf("\nPath from %s to %s is:\n", ((DeepSearchStations)sp).getSource(), ((DeepSearchStations)sp).getTarget());
+            System.out.printf("\nCaminho de%s para %s is:\n", ((DeepSearchStations)sp).getSource(), ((DeepSearchStations)sp).getTarget());
             for(Station vc: path)
                 System.out.println(vc);
         }
         else
-            System.out.printf("Destiny not found!\n");
+            System.out.printf("Destino não encontrado\n");
     }
 
 	public String[] getCityNames() {
