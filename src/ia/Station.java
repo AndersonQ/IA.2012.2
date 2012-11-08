@@ -18,6 +18,7 @@ public class Station
 	public Station(String s)
 	{
 	    name = s;
+        c = Colour.WHITE;
 	}
 	public String getName() 
 	{
@@ -27,7 +28,6 @@ public class Station
 	public void setName(String name)
 	{
 		this.name = name;
-		c = Colour.WHITE;
 	}
 
 	public Colour getColour()
