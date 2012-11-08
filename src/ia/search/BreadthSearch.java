@@ -28,6 +28,11 @@ import java.util.Stack;
 
 import org.jgrapht.UndirectedGraph;
 
+/**
+ * 
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ *
+ */
 public class BreadthSearch implements SearchProblem {
 
 	/** The graph */
