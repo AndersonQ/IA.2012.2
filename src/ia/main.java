@@ -3,6 +3,7 @@ package ia;
 import java.util.Scanner;
 
 import ia.search.ExecuteBreadth;
+import ia.search.ExecuteDeep;
 import ia.search.ExecuteGreedy;
 import ia.search.ExecuteUniformCost;
 
@@ -21,6 +22,8 @@ public class main
         ExecuteGreedy gs;
         ExecuteBreadth bs;
         ExecuteUniformCost ufc;
+        ExecuteDeep ds;
+        
         int op = 100, i, src, dst;
         Scanner sc = new Scanner(System.in);
         String cities[];
@@ -69,10 +72,60 @@ public class main
 
             case 2:
                 //Busca em profundidade
+                ds = new ExecuteDeep();
+                cities = ds.getCityNames();
+
+                System.out.printf("\nEscolha a cidade da partida:\n");
+                for(i = 0; i < cities.length; i++)
+                    System.out.printf("%d - %s\n", i, cities[i]);
+                System.out.printf(">");
+                src = sc.nextInt();
+
+                System.out.printf("\nEscolha a cidade de destino:\n");
+                for(i = 0; i < cities.length; i++)
+                    if(i != src)
+                        System.out.printf("%d - %s\n", i, cities[i]);
+                System.out.printf(">");
+                dst = sc.nextInt();
+
+                try
+                {
+                	ds.run(src, dst);
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                    System.exit(1);
+                }
                 break;
 
             case 3:
                 //Busca de custo uniforme
+                ufc = new ExecuteUniformCost();
+                cities = ufc.getCityNames();
+
+                System.out.printf("\nEscolha a cidade da partida:\n");
+                for(i = 0; i < cities.length; i++)
+                    System.out.printf("%d - %s\n", i, cities[i]);
+                System.out.printf(">");
+                src = sc.nextInt();
+
+                System.out.printf("\nEscolha a cidade de destino:\n");
+                for(i = 0; i < cities.length; i++)
+                    if(i != src)
+                        System.out.printf("%d - %s\n", i, cities[i]);
+                System.out.printf(">");
+                dst = sc.nextInt();
+
+                try
+                {
+                	ufc.run(src, dst);
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                    System.exit(1);
+                }
                 break;
 
             case 4:
