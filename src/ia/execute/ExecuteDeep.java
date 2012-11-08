@@ -21,13 +21,11 @@ import ia.City;
 import ia.Colour;
 import ia.WeightCityLink;
 import ia.search.DeepSearch;
-import ia.search.GreedySearch;
 import ia.search.SearchProblem;
 import ia.search.SearchResult;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 import java.util.Stack;
 
 import org.jgrapht.UndirectedGraph;
