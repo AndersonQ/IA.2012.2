@@ -30,7 +30,7 @@ public class UniformCostSearch implements SearchProblem{
 	/** The target city */
 	City target;
 
-	public UniformCostSearch(UndirectedGraph<City, WeightCityLink> graph, City target, City source)
+	public UniformCostSearch(UndirectedGraph<City, WeightCityLink> graph, City source, City target)
 	{
 		this.graph = graph;
 		this.target = target;
