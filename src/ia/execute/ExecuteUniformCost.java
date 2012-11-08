@@ -32,21 +32,17 @@ import ia.search.UniformCostSearch;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
+/**
+ * 
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ *
+ */
 public class ExecuteUniformCost implements Execute{
     UndirectedGraph<City, WeightCityLink> g;
     City source, destiny;
     String[] cityNames;
 
     City cities[];
-
-    double h [][] = {{0.0, 41.7, 43.2, 41.3, 59.7, 51.1, 37.7, 28.8},
-            {41.7, 00.0, 38.8, 61.8, 32.5, 12.3, 22.1, 18.3},
-            {43.2, 38.8, 00.0, 45.2, 35.0, 36.0, 19.2, 44.2},
-            {41.3, 61.8, 45.2, 00.0, 71.1, 70.4, 45.2, 52.2},
-            {59.7, 32.5, 35.0, 71.1, 00.0, 09.3, 28.7, 44.9},
-            {51.1, 12.3, 36.0, 70.4, 09.3, 00.0, 20.2, 34.8},
-            {37.7, 22.1, 19.2, 45.2, 28.7, 20.2, 00.0, 18.2},
-            {28.8, 18.3, 44.2, 52.2, 44.9, 34.8, 18.2, 00.0}};
 
     public ExecuteUniformCost()
     {

@@ -20,6 +20,7 @@ package ia.execute;
 import ia.City;
 import ia.Colour;
 import ia.WeightCityLink;
+import ia.search.DeepSearch;
 import ia.search.GreedySearch;
 import ia.search.SearchProblem;
 import ia.search.SearchResult;
@@ -32,6 +33,11 @@ import java.util.Stack;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
+/**
+ * 
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ *
+ */
 public class ExecuteDeep implements Execute{
     UndirectedGraph<City, WeightCityLink> g;
     City source, destiny;
@@ -39,15 +45,6 @@ public class ExecuteDeep implements Execute{
 
     City cities[];
 
-    double h [][] = {{0.0, 41.7, 43.2, 41.3, 59.7, 51.1, 37.7, 28.8},
-            {41.7, 00.0, 38.8, 61.8, 32.5, 12.3, 22.1, 18.3},
-            {43.2, 38.8, 00.0, 45.2, 35.0, 36.0, 19.2, 44.2},
-            {41.3, 61.8, 45.2, 00.0, 71.1, 70.4, 45.2, 52.2},
-            {59.7, 32.5, 35.0, 71.1, 00.0, 09.3, 28.7, 44.9},
-            {51.1, 12.3, 36.0, 70.4, 09.3, 00.0, 20.2, 34.8},
-            {37.7, 22.1, 19.2, 45.2, 28.7, 20.2, 00.0, 18.2},
-            {28.8, 18.3, 44.2, 52.2, 44.9, 34.8, 18.2, 00.0}};
-	
 	public ExecuteDeep()
 	{
         /*
@@ -139,7 +136,7 @@ public class ExecuteDeep implements Execute{
         SearchResult r = null;
         //Diadema -> Guarulhos
         System.out.printf("Buscando caminho de %s para %s\n", source, destiny);
-        SearchProblem sp = new GreedySearch(g, source, destiny, h);
+        SearchProblem sp = new DeepSearch(g, source, destiny);
         s.push(source);
         while(!s.empty())
         {
@@ -181,19 +178,19 @@ public class ExecuteDeep implements Execute{
             /*
              * Build the path form source to destiny
              */
-            while(!((GreedySearch)sp).getSource().equals(c))
+            while(!((DeepSearch)sp).getSource().equals(c))
             {
                 rpath.add(c);
                 c = c.getFather();
             }
 
             /* Reverse the path */
-            path.add(((GreedySearch)sp).getSource());
+            path.add(((DeepSearch)sp).getSource());
             for(int i = rpath.size() - 1; i >=0; i--)
                 path.add(rpath.get(i));
 
             /* Print the path */
-            System.out.printf("\nCaminho de %s para %s is:\n", ((GreedySearch)sp).getSource(), ((GreedySearch)sp).getDestiny());
+            System.out.printf("\nCaminho de %s para %s is:\n", ((DeepSearch)sp).getSource(), ((DeepSearch)sp).getTarget());
             for(City vc: path)
                 System.out.println(vc);
         }

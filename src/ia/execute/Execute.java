@@ -5,6 +5,11 @@ import ia.WeightCityLink;
 
 import org.jgrapht.UndirectedGraph;
 
+/**
+ * 
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ *
+ */
 public interface Execute {
 
 	/** 
