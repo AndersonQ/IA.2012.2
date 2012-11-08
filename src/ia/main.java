@@ -21,6 +21,7 @@ import java.util.Scanner;
 
 import ia.execute.ExecuteBreadth;
 import ia.execute.ExecuteDeep;
+import ia.execute.ExecuteDeepStation;
 import ia.execute.ExecuteGreedy;
 import ia.execute.ExecuteUniformCost;
 
@@ -40,6 +41,7 @@ public class main
         ExecuteBreadth bs;
         ExecuteUniformCost ufc;
         ExecuteDeep ds;
+        ExecuteDeepStation dss;
         
         int op = 100, i, src, dst;
         Scanner sc = new Scanner(System.in);
@@ -52,6 +54,8 @@ public class main
             System.out.printf("2 - Busca em profundidade\n");
             System.out.printf("3 - Busca de custo uniforme\n");
             System.out.printf("4 - Busca gulosa\n");
+            System.out.printf("\nCaminhos da UFABC a para USP\n");
+            System.out.printf("5 - Busca em profundidade\n");
             System.out.printf("0 - Sair\n");
             System.out.printf("> ");
             op = sc.nextInt();            
@@ -166,6 +170,34 @@ public class main
                 try
                 {
                     gs.run(src, dst);
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                    System.exit(1);
+                }
+                break;
+            case 5:
+                //Busca em profundidade USP
+                dss = new ExecuteDeepStation();
+                cities = dss.getCityNames();
+
+                System.out.printf("\nEscolha a cidade da partida:\n");
+                for(i = 0; i < cities.length; i++)
+                    System.out.printf("%d - %s\n", i, cities[i]);
+                System.out.printf("> ");
+                src = sc.nextInt();
+
+                System.out.printf("\nEscolha a cidade de destino:\n");
+                for(i = 0; i < cities.length; i++)
+                    if(i != src)
+                        System.out.printf("%d - %s\n", i, cities[i]);
+                System.out.printf("> ");
+                dst = sc.nextInt();
+
+                try
+                {
+                	dss.run(src, dst);
                 }
                 catch(Exception e)
                 {
