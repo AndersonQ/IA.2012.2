@@ -44,7 +44,7 @@ public class ExecuteDeepStation
     {
     }
 
-    public void run()
+    public void run(int src)
     {
 
         UndirectedGraph<Station, TimeStationLink> g = new SimpleGraph<Station, TimeStationLink>(TimeStationLink.class);
@@ -130,11 +130,21 @@ public class ExecuteDeepStation
         Station c = null;
         List<Object> cl = null;
         SearchResult r = null;
+        SearchProblem sp;
+        
+        if(src == 1)
+        {
+            System.out.printf("Indo de %s para %s\n", e1, e16);
+            sp = new DeepSearchStations(g, e1, e16);
+            stack.push(e1);
+        }
+        else
+        {
+            System.out.printf("Indo de %s para %s\n", e2, e16);
+            sp = new DeepSearchStations(g, e2, e16);
+            stack.push(e2);
+        }
 
-        System.out.printf("Indo de %s para %s\n", e1, e16);
-        SearchProblem sp = new DeepSearchStations(g, e1, e16);
-
-        stack.push(e1);
         while(!stack.isEmpty())
         {
             /* Expand */

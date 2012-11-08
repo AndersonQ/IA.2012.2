@@ -57,8 +57,9 @@ public class main
             System.out.printf("3 - Busca de custo uniforme\n");
             System.out.printf("4 - Busca gulosa\n");
             System.out.printf("\nCaminhos da UFABC a para USP\n");
-            System.out.printf("5 - Busca em profundidade\n");
+            System.out.printf("5 - Busca em profundidade CPTM\n");
             System.out.printf("6 - Busca em largura\n");
+            System.out.printf("7 - Busca em profundidade EMTU\n");
             System.out.printf("0 - Sair\n");
             System.out.printf("> ");
             op = sc.nextInt();            
@@ -187,7 +188,7 @@ public class main
 
                 try
                 {
-                	dss.run();
+                	dss.run(1);
                 }
                 catch(Exception e)
                 {
@@ -204,6 +205,22 @@ public class main
                 try
                 {
                     dbs.run();
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                    System.exit(1);
+                }
+                break;
+                
+            case 7:
+                //Busca em profundidade USP Onibus
+                dss = new ExecuteDeepStation();
+                System.out.printf("Indo de EMTU Santo André para USP\n");
+
+                try
+                {
+                    dss.run(2);
                 }
                 catch(Exception e)
                 {
