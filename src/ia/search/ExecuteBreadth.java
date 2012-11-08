@@ -1,11 +1,8 @@
-package ia.tests;
+package ia.search;
 
 import ia.City;
 import ia.Colour;
 import ia.WeightCityLink;
-import ia.search.DeepSearch;
-import ia.search.SearchProblem;
-import ia.search.SearchResult;
 
 import java.util.LinkedList;
 import java.util.List;

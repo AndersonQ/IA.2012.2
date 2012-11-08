@@ -2,8 +2,8 @@ package ia;
 
 import java.util.Scanner;
 
+import ia.search.ExecuteBreadth;
 import ia.search.ExecuteGreedy;
-import ia.tests.ExecuteBreadth;
 import ia.search.ExecuteUniformCost;
 
 /**
