@@ -1,6 +1,6 @@
 /*
  * Copyright 2012 Anderson Queiroz <contato(at)andersonq(dot)eti(dot)br>
- * 					Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ * 					Fernando Zucatelli, João Coutinho, Tiago Queiroz <contato(at)tiago(dot)eti(dot)br>
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
