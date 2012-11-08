@@ -32,6 +32,11 @@ import java.util.Stack;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
+/**
+ * 
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ *
+ */
 public class ExecuteBreadth implements Execute
 {
     UndirectedGraph<City, WeightCityLink> g;
