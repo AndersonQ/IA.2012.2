@@ -22,13 +22,13 @@ public class TimeStationLink extends DefaultEdge
 	}
 	
 	@Override
-	protected Station getSource()
+	public Station getSource()
 	{
 		return graph.getEdgeSource(this);
 	}
 
 	@Override
-	protected Station getTarget()
+	public Station getTarget()
 	{
 		return graph.getEdgeTarget(this);
 	}

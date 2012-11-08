@@ -13,7 +13,12 @@ public class Station
 	 */
 	protected String name;
 	protected Colour c;
+	protected Station father;
 
+	public Station(String s)
+	{
+	    name = s;
+	}
 	public String getName() 
 	{
 		return name;
@@ -22,15 +27,31 @@ public class Station
 	public void setName(String name)
 	{
 		this.name = name;
+		c = Colour.WHITE;
 	}
 
-	public Colour getC()
+	public Colour getColour()
 	{
 		return c;
 	}
 
-	public void setC(Colour c)
+	public void setColour(Colour c)
 	{
 		this.c = c;
 	}
+
+    public Station getFather()
+    {
+        return father;
+    }
+
+    public void setFather(Station father)
+    {
+        this.father = father;
+    }
+    
+    public String toString()
+    {
+        return name;        
+    }
 }
