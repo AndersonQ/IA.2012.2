@@ -78,8 +78,8 @@ public class DeepSearch implements SearchProblem {
 		return null;
 	}
 
-	@Override
-	public List<Object> expand(Object o) {
+	public List<Object> expand(Object o)
+	{
 		//Cast to city
 		City node = (City) o;
 		//A Set to keep neighbour
@@ -106,8 +106,8 @@ public class DeepSearch implements SearchProblem {
 		return l;
 	}
 
-	@Override
-	public SearchResult process(Object o) {
+	public SearchResult process(Object o)
+	{
 		City city = (City) o;
 		//city is the goal true, otherwise, fail
 		return new SearchResult(this.target.getName().equals(city.getName()));
