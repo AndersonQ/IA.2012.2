@@ -44,12 +44,11 @@ public class ExecuteDeepStation implements Execute
     {
     }
 
-	@Override
 	public void run(int src, int dest) throws Exception {
-		run();		
+		run(src);		
 	}
 	
-    public void run()
+    private void run(int src)
     {
 
         UndirectedGraph<Station, TimeStationLink> g = new SimpleGraph<Station, TimeStationLink>(TimeStationLink.class);
@@ -135,11 +134,21 @@ public class ExecuteDeepStation implements Execute
         Station c = null;
         List<Object> cl = null;
         SearchResult r = null;
+        SearchProblem sp;
+        
+        if(src == 1)
+        {
+            System.out.printf("Indo de %s para %s\n", e1, e16);
+            sp = new DeepSearchStations(g, e1, e16);
+            stack.push(e1);
+        }
+        else
+        {
+            System.out.printf("Indo de %s para %s\n", e2, e16);
+            sp = new DeepSearchStations(g, e2, e16);
+            stack.push(e2);
+        }
 
-        System.out.printf("Indo de %s para %s\n", e1, e16);
-        SearchProblem sp = new DeepSearchStations(g, e1, e16);
-
-        stack.push(e1);
         while(!stack.isEmpty())
         {
             /* Expand */
@@ -200,7 +209,6 @@ public class ExecuteDeepStation implements Execute
             System.out.printf("Destiny not found!\n");
     }
 
-	@Override
 	public String[] getCityNames() {
 		// TODO Auto-generated method stub
 		return null;
