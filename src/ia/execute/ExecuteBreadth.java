@@ -27,7 +27,6 @@ import ia.search.SearchResult;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.Stack;
 
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;

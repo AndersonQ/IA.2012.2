@@ -24,7 +24,6 @@ import ia.WeightCityLink;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.Stack;
 
 import org.jgrapht.UndirectedGraph;
 

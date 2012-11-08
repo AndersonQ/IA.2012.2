@@ -20,10 +20,8 @@ package ia.execute;
 import ia.Station;
 import ia.Colour;
 import ia.TimeStationLink;
-import ia.search.DeepSearch;
 import ia.search.SearchProblem;
 import ia.search.SearchResult;
-import ia.search.UniformCostSearch;
 import ia.tests.DeepSearchStations;
 
 import java.util.LinkedList;
