@@ -107,7 +107,7 @@ public class ExecuteBreadth
          */
 
         /* Auxiliar data structs */
-        Queue<City> stack = new LinkedList<City>();
+        Queue<City> queue = new LinkedList<City>();
         City c = null;
         List<Object> cl = null;
         SearchResult r = null;
@@ -115,12 +115,12 @@ public class ExecuteBreadth
         System.out.printf("Buscando caminho de %s para %s\n", source, destiny);
         SearchProblem sp = new DeepSearch(g, cities[src], cities[dest]);
 
-        stack.add(cities[src]);
-        while(!stack.isEmpty())
+        queue.add(cities[src]);
+        while(!queue.isEmpty())
         {
             /* Expand */
             //c = list.pop();
-            c = stack.remove();
+            c = queue.remove();
             c.setColour(Colour.GRAY);
             cl = sp.expand(c);
 
@@ -128,7 +128,7 @@ public class ExecuteBreadth
             for(Object node: cl)
             {
                 if( ((City)node).getColour() == Colour.WHITE)
-                    stack.add((City)node);
+                    queue.add((City)node);
 
                 /* Set the father of the expanded node to c */
                 if( (((City)node).getFather() == null) )
