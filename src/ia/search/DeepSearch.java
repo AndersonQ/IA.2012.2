@@ -22,14 +22,20 @@ public class DeepSearch implements SearchProblem {
 	private UndirectedGraph<City, WeightCityLink> graph;
 	/** A stack to walk trough graph */ 
 	private Stack<City> stack;
+	/** The source city */
+	City source;
+	/** The target city */
+	City target;
 	
 	/**
 	 * Deep search to search problem
 	 * @param graph
 	 */
-	public DeepSearch(UndirectedGraph<City, WeightCityLink> graph)
+	public DeepSearch(UndirectedGraph<City, WeightCityLink> graph, City source, City target)
 	{
 		this.graph = graph;
+		this.source = source;
+		this.target = target;
 		this.stack = new Stack<City>();
 	}
 
@@ -75,19 +81,26 @@ public class DeepSearch implements SearchProblem {
 	@Override
 	public List<Object> expand(Object o) {
 		//Cast to city
-		City city = (City) o;
+		City node = (City) o;
 		//A Set to keep neighbour
 		Set<WeightCityLink> neighbour;
 		//Get neighbours
-		neighbour = graph.edgesOf(city);
+		neighbour = graph.edgesOf(node);
 
 		List<Object> l = new LinkedList<Object>();
 
-		for(WeightCityLink c : neighbour)
+		for(WeightCityLink edge : neighbour)
 		{
-			if(!l.contains(c.getTarget()))
+			City source = edge.getSource();
+			City target = edge.getTarget();
+			
+			if(source != node)
 			{
-				l.add(c);
+				l.add(source);
+			}
+			if(target != node)
+			{
+				l.add(target);
 			}
 		}
 		return l;
@@ -95,6 +108,17 @@ public class DeepSearch implements SearchProblem {
 
 	@Override
 	public SearchResult process(Object o) {
-		return null;
+		City city = (City) o;
+		//city is the goal true, otherwise, fail
+		return new SearchResult(this.target.getName().equals(city.getName()));
 	}
+
+	public City getSource() {
+		return source;
+	}
+
+	public City getTarget() {
+		return target;
+	}
+	
 }
