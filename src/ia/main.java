@@ -36,6 +36,30 @@ public class main
             {
             case 1:
                 //Busca em largura
+                cities = gs.getCityNames();
+
+                System.out.printf("\nEscolha a cidade da partida:\n");
+                for(i = 0; i < cities.length; i++)
+                    System.out.printf("%d - %s\n", i, cities[i]);
+                System.out.printf(">");
+                src = sc.nextInt();
+
+                System.out.printf("\nEscolha a cidade de destino:\n");
+                for(i = 0; i < cities.length; i++)
+                    if(i != src)
+                        System.out.printf("%d - %s\n", i, cities[i]);
+                System.out.printf(">");
+                dst = sc.nextInt();
+
+                try
+                {
+                    gs.run(src, dst);
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                    System.exit(1);
+                }
                 break;
 
             case 2:
