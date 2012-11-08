@@ -36,7 +36,7 @@ public class main
             System.out.printf("3 - Busca de custo uniforme\n");
             System.out.printf("4 - Busca gulosa\n");
             System.out.printf("0 - Sair\n");
-            System.out.printf(">\n");
+            System.out.printf("> ");
             op = sc.nextInt();            
 
             switch(op)
