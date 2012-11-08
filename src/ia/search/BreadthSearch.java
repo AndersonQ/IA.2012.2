@@ -105,9 +105,7 @@ public class BreadthSearch implements SearchProblem {
 	}
 
 	public SearchResult process(Object o) {
-		
-		
-		
+
 		return null;
 	}
 
