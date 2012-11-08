@@ -169,7 +169,7 @@ public class ExecuteUniformCost {
 
             /* Reverse the path */
             path.add(((UniformCostSearch)sp).getSource());
-            for(int i = rpath.size() - 1; i >=0; i--)
+            for(int i = rpath.size() - 1; i >= 0; i--)
                 path.add(rpath.get(i));
 
             /* Print the path */
@@ -181,8 +181,8 @@ public class ExecuteUniformCost {
             System.out.printf("Destiny not found!\n");
     }
 
-	public String[] getCityNames() {
-
-		return null;
-	}
+    public String[] getCityNames()
+    {
+        return cityNames;
+    }
 }
