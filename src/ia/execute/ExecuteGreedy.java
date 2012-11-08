@@ -1,18 +1,26 @@
-package ia.search;
+package ia.execute;
 
 import ia.City;
 import ia.Colour;
 import ia.WeightCityLink;
+import ia.search.GreedySearch;
+import ia.search.SearchProblem;
+import ia.search.SearchResult;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 import java.util.Stack;
 
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
-public class ExecuteDeep {
+/**
+ * 
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ *
+ */
+public class ExecuteGreedy
+{
     UndirectedGraph<City, WeightCityLink> g;
     City source, destiny;
     String[] cityNames;
@@ -27,9 +35,9 @@ public class ExecuteDeep {
             {51.1, 12.3, 36.0, 70.4, 09.3, 00.0, 20.2, 34.8},
             {37.7, 22.1, 19.2, 45.2, 28.7, 20.2, 00.0, 18.2},
             {28.8, 18.3, 44.2, 52.2, 44.9, 34.8, 18.2, 00.0}};
-	
-	public ExecuteDeep()
-	{
+
+    public ExecuteGreedy()
+    {
         /*
          * Build a vector with the cities names.
          */
@@ -99,7 +107,7 @@ public class ExecuteDeep {
         g.addEdge(cities[7], cities[0], new WeightCityLink(g, 1) );
         g.addEdge(cities[7], cities[1], new WeightCityLink(g, 1) );
         g.addEdge(cities[7], cities[6], new WeightCityLink(g, 1) );
-	}
+    }
 
     public void run(int src, int dest) throws Exception
     {

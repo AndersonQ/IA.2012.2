@@ -2,10 +2,10 @@ package ia;
 
 import java.util.Scanner;
 
-import ia.search.ExecuteBreadth;
-import ia.search.ExecuteDeep;
-import ia.search.ExecuteGreedy;
-import ia.search.ExecuteUniformCost;
+import ia.execute.ExecuteBreadth;
+import ia.execute.ExecuteDeep;
+import ia.execute.ExecuteGreedy;
+import ia.execute.ExecuteUniformCost;
 
 /**
  * 

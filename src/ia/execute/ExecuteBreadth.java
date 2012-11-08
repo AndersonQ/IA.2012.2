@@ -1,33 +1,28 @@
-package ia.search;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+package ia.execute;
 
 import ia.City;
 import ia.Colour;
 import ia.WeightCityLink;
+import ia.search.DeepSearch;
+import ia.search.SearchProblem;
+import ia.search.SearchResult;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Stack;
 
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
-public class ExecuteUniformCost {
+public class ExecuteBreadth
+{
     UndirectedGraph<City, WeightCityLink> g;
     City source, destiny;
     String[] cityNames;
 
     City cities[];
-
-    double h [][] = {{0.0, 41.7, 43.2, 41.3, 59.7, 51.1, 37.7, 28.8},
-            {41.7, 00.0, 38.8, 61.8, 32.5, 12.3, 22.1, 18.3},
-            {43.2, 38.8, 00.0, 45.2, 35.0, 36.0, 19.2, 44.2},
-            {41.3, 61.8, 45.2, 00.0, 71.1, 70.4, 45.2, 52.2},
-            {59.7, 32.5, 35.0, 71.1, 00.0, 09.3, 28.7, 44.9},
-            {51.1, 12.3, 36.0, 70.4, 09.3, 00.0, 20.2, 34.8},
-            {37.7, 22.1, 19.2, 45.2, 28.7, 20.2, 00.0, 18.2},
-            {28.8, 18.3, 44.2, 52.2, 44.9, 34.8, 18.2, 00.0}};
-
-    public ExecuteUniformCost()
+    public ExecuteBreadth()
     {
         /*
          * Build a vector with the cities names.
@@ -107,24 +102,28 @@ public class ExecuteUniformCost {
 
         source = cities[src];
         destiny = cities[dest];
-		/*
+
+        System.out.print("\nSolving a problem: ");
+
+        /*
          * Loop to solve the problem
          */
 
         /* Auxiliar data structs */
-		Queue<City> list = new LinkedList<City>();
+        Queue<City> queue = new LinkedList<City>();
         City c = null;
         List<Object> cl = null;
         SearchResult r = null;
+
         System.out.printf("Buscando caminho de %s para %s\n", source, destiny);
-        SearchProblem sp = new UniformCostSearch(g, source, destiny);
-        
-        list.add(source);
-        while(!list.isEmpty())
+        SearchProblem sp = new DeepSearch(g, cities[src], cities[dest]);
+
+        queue.add(cities[src]);
+        while(!queue.isEmpty())
         {
             /* Expand */
             //c = list.pop();
-        	c = list.remove();
+            c = queue.remove();
             c.setColour(Colour.GRAY);
             cl = sp.expand(c);
 
@@ -132,7 +131,7 @@ public class ExecuteUniformCost {
             for(Object node: cl)
             {
                 if( ((City)node).getColour() == Colour.WHITE)
-                    list.add((City)node);
+                    queue.add((City)node);
 
                 /* Set the father of the expanded node to c */
                 if( (((City)node).getFather() == null) )
@@ -161,19 +160,19 @@ public class ExecuteUniformCost {
             /*
              * Build the path form source to destiny
              */
-            while(!((UniformCostSearch)sp).getSource().equals(c))
+            while(!((DeepSearch)sp).getSource().equals((Object)c))
             {
                 rpath.add(c);
                 c = c.getFather();
             }
 
             /* Reverse the path */
-            path.add(((UniformCostSearch)sp).getSource());
-            for(int i = rpath.size() - 1; i >= 0; i--)
+            path.add(((DeepSearch)sp).getSource());
+            for(int i = rpath.size() - 1; i >=0; i--)
                 path.add(rpath.get(i));
 
             /* Print the path */
-            System.out.printf("\nPath from %s to %s is:\n", ((UniformCostSearch)sp).getSource(), ((UniformCostSearch)sp).getTarget());
+            System.out.printf("\nPath from %s to %s is:\n", ((DeepSearch)sp).getSource(), ((DeepSearch)sp).getTarget());
             for(City vc: path)
                 System.out.println(vc);
         }
