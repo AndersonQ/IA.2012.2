@@ -32,7 +32,7 @@ import java.util.Stack;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
-public class ExecuteDeep {
+public class ExecuteDeep implements Execute{
     UndirectedGraph<City, WeightCityLink> g;
     City source, destiny;
     String[] cityNames;

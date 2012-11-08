@@ -188,7 +188,7 @@ public class main
 
                 try
                 {
-                	dss.run(1);
+                	dss.run(1, 0);
                 }
                 catch(Exception e)
                 {
@@ -220,7 +220,7 @@ public class main
 
                 try
                 {
-                    dss.run(2);
+                    dss.run(2, 0);
                 }
                 catch(Exception e)
                 {

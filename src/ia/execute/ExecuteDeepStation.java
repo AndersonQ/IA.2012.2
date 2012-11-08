@@ -38,13 +38,17 @@ import org.jgrapht.graph.SimpleGraph;
  * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
  *
  */
-public class ExecuteDeepStation
+public class ExecuteDeepStation implements Execute
 {
     public ExecuteDeepStation()
     {
     }
 
-    public void run(int src)
+	public void run(int src, int dest) throws Exception {
+		run(src);		
+	}
+	
+    private void run(int src)
     {
 
         UndirectedGraph<Station, TimeStationLink> g = new SimpleGraph<Station, TimeStationLink>(TimeStationLink.class);
@@ -204,4 +208,9 @@ public class ExecuteDeepStation
         else
             System.out.printf("Destiny not found!\n");
     }
+
+	public String[] getCityNames() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

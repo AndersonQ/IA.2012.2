@@ -32,7 +32,7 @@ import ia.search.UniformCostSearch;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
-public class ExecuteUniformCost {
+public class ExecuteUniformCost implements Execute{
     UndirectedGraph<City, WeightCityLink> g;
     City source, destiny;
     String[] cityNames;

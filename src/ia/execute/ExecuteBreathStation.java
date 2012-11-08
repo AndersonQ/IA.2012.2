@@ -39,11 +39,16 @@ import org.jgrapht.graph.SimpleGraph;
  * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
  *
  */
-public class ExecuteBreathStation {
+public class ExecuteBreathStation implements Execute
+{
 
     public ExecuteBreathStation(){
     }
 
+	public void run(int src, int dest) throws Exception {
+		run();		
+	}
+	
     public void run()
     {
         UndirectedGraph<Station, TimeStationLink> g = new SimpleGraph<Station, TimeStationLink>(TimeStationLink.class);
@@ -195,4 +200,9 @@ public class ExecuteBreathStation {
         else
             System.out.printf("Destiny not found!\n");
     }
+
+	public String[] getCityNames() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
