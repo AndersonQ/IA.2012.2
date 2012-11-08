@@ -15,139 +15,173 @@ import java.util.Stack;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
-public class BreadthTest {
+public class BreadthTest
+{
+    UndirectedGraph<City, WeightCityLink> g;
+    City source, destiny;
+    String[] cityNames;
 
-	public BreadthTest(){
-	}
-	
-	public static void main(String[] args){
+    City cities[];
+    public BreadthTest()
+    {
+        /*
+         * Build a vector with the cities names.
+         */
+        cityNames = new String[8];
 
-		UndirectedGraph<City, WeightCityLink> g = new SimpleGraph<City, WeightCityLink>(WeightCityLink.class);
-		City ct1,ct2,ct3,ct4,ct5,ct6,ct7,ct8;
+        cityNames[0] = new String ("Barueri");
+        cityNames[1] = new String ("Diadema");
+        cityNames[2] = new String ("Guarulhos");
+        cityNames[3] = new String ("Franco da Rocha");
+        cityNames[4] = new String ("Mauá");
+        cityNames[5] = new String ("Santo André");
+        cityNames[6] = new String ("São Paulo");
+        cityNames[7] = new String ("Taboão da Serra");
 
-		ct1 = new City("Barueri");
-		ct2 = new City("Diadema");
-		ct3 = new City("Guarulhos");
-		ct4 = new City("Franco da Rocha");
-		ct5 = new City("Mauá");
-		ct6 = new City("Santo André");
-		ct7 = new City("São Paulo");
-		ct8 = new City("Taboão da Serra");
+        /*
+         * Build graph
+         */
+        g = new SimpleGraph<City, WeightCityLink>(WeightCityLink.class);
 
-		g.addVertex(ct1);
-		g.addVertex(ct2);
-		g.addVertex(ct3);
-		g.addVertex(ct4);
-		g.addVertex(ct5);
-		g.addVertex(ct6);
-		g.addVertex(ct7);
-		g.addVertex(ct8);
+        cities = new City[8];
 
-		g.addEdge(ct1, ct4, new WeightCityLink(g, 1) );
-		g.addEdge(ct1, ct8, new WeightCityLink(g, 1) );
+        cities[0] = new City("Barueri");
+        cities[1] = new City("Diadema");
+        cities[2] = new City("Guarulhos");
+        cities[3] = new City("Franco da Rocha");
+        cities[4] = new City("Mauá");
+        cities[5] = new City("Santo André");
+        cities[6] = new City("São Paulo");
+        cities[7] = new City("Taboão da Serra");
 
-		g.addEdge(ct2, ct6, new WeightCityLink(g, 1) );
-		g.addEdge(ct2, ct7, new WeightCityLink(g, 1) );
-		g.addEdge(ct2, ct8, new WeightCityLink(g, 1) );
+        g.addVertex(cities[0]);
+        g.addVertex(cities[1]);
+        g.addVertex(cities[2]);
+        g.addVertex(cities[3]);
+        g.addVertex(cities[4]);
+        g.addVertex(cities[5]);
+        g.addVertex(cities[6]);
+        g.addVertex(cities[7]);
 
-		g.addEdge(ct3, ct4, new WeightCityLink(g, 1) );
-		g.addEdge(ct3, ct7, new WeightCityLink(g, 1) );
+        g.addEdge(cities[0], cities[3], new WeightCityLink(g, 1) );
+        g.addEdge(cities[0], cities[7], new WeightCityLink(g, 1) );
 
-		g.addEdge(ct4, ct1, new WeightCityLink(g, 1) );
-		g.addEdge(ct4, ct3, new WeightCityLink(g, 1) );
-		g.addEdge(ct4, ct7, new WeightCityLink(g, 1) );
+        g.addEdge(cities[1], cities[5], new WeightCityLink(g, 1) );
+        g.addEdge(cities[1], cities[6], new WeightCityLink(g, 1) );
+        g.addEdge(cities[1], cities[7], new WeightCityLink(g, 1) );
 
-		g.addEdge(ct5, ct6, new WeightCityLink(g, 1) );
-		g.addEdge(ct5, ct7, new WeightCityLink(g, 1) );
+        g.addEdge(cities[2], cities[3], new WeightCityLink(g, 1) );
+        g.addEdge(cities[2], cities[6], new WeightCityLink(g, 1) );
 
-		g.addEdge(ct6, ct2, new WeightCityLink(g, 1) );
-		g.addEdge(ct6, ct5, new WeightCityLink(g, 1) );
-		g.addEdge(ct6, ct7, new WeightCityLink(g, 1) );
+        g.addEdge(cities[3], cities[0], new WeightCityLink(g, 1) );
+        g.addEdge(cities[3], cities[2], new WeightCityLink(g, 1) );
+        g.addEdge(cities[3], cities[6], new WeightCityLink(g, 1) );
 
-		g.addEdge(ct7, ct2, new WeightCityLink(g, 1) );
-		g.addEdge(ct7, ct3, new WeightCityLink(g, 1) );
-		g.addEdge(ct7, ct5, new WeightCityLink(g, 1) );
-		g.addEdge(ct7, ct6, new WeightCityLink(g, 1) );
-		g.addEdge(ct7, ct8, new WeightCityLink(g, 1) );
+        g.addEdge(cities[4], cities[5], new WeightCityLink(g, 1) );
+        g.addEdge(cities[4], cities[6], new WeightCityLink(g, 1) );
 
-		g.addEdge(ct8, ct1, new WeightCityLink(g, 1) );
-		g.addEdge(ct8, ct2, new WeightCityLink(g, 1) );
-		g.addEdge(ct8, ct7, new WeightCityLink(g, 1) );
+        g.addEdge(cities[5], cities[1], new WeightCityLink(g, 1) );
+        g.addEdge(cities[5], cities[4], new WeightCityLink(g, 1) );
+        g.addEdge(cities[5], cities[6], new WeightCityLink(g, 1) );
 
-		System.out.print("\nSolving a problem: ");
+        g.addEdge(cities[6], cities[1], new WeightCityLink(g, 1) );
+        g.addEdge(cities[6], cities[2], new WeightCityLink(g, 1) );
+        g.addEdge(cities[6], cities[4], new WeightCityLink(g, 1) );
+        g.addEdge(cities[6], cities[5], new WeightCityLink(g, 1) );
+        g.addEdge(cities[6], cities[7], new WeightCityLink(g, 1) );
 
-		/*
-		 * Loop to solve the problem
-		 */
+        g.addEdge(cities[7], cities[0], new WeightCityLink(g, 1) );
+        g.addEdge(cities[7], cities[1], new WeightCityLink(g, 1) );
+        g.addEdge(cities[7], cities[6], new WeightCityLink(g, 1) );
+    }
 
-		/* Auxiliar data structs */
-		Queue<City> stack = new LinkedList<City>();
-		City c = null;
-		List<Object> cl = null;
-		SearchResult r = null;
+    public void run(int src, int dest) throws Exception
+    {
+        if((src < 0) || (src >= 8) || (dest < 0) || (dest >=8))
+            throw new Exception("Source or destiny not found!");
 
-		System.out.printf("Trying to go to: %s from %s\n", ct3, ct2);
-		SearchProblem sp = new DeepSearch(g, ct3, ct2);
+        source = cities[src];
+        destiny = cities[dest];
 
-		stack.add(ct3);
-		while(!stack.isEmpty())
-		{
-			/* Expand */
-			//c = list.pop();
-			c = stack.remove();
-			c.setColour(Colour.GRAY);
-			cl = sp.expand(c);
+        System.out.print("\nSolving a problem: ");
 
-			/* Put all non processed nodes in the queue */
-			for(Object node: cl)
-			{
-				if( ((City)node).getColour() == Colour.WHITE)
-					stack.add((City)node);
+        /*
+         * Loop to solve the problem
+         */
 
-				/* Set the father of the expanded node to c */
-				if( (((City)node).getFather() == null) )
-					((City)node).setFather(c);
-			}
+        /* Auxiliar data structs */
+        Queue<City> stack = new LinkedList<City>();
+        City c = null;
+        List<Object> cl = null;
+        SearchResult r = null;
 
-			/* If c is NOT BLACK process it and make it BLACK */
-			if( c.getColour() != Colour.BLACK)
-			{
-				r = sp.process(c);
-				c.setColour(Colour.BLACK);
-			}
+        System.out.printf("Buscando caminho de %s para %s\n", source, destiny);
+        SearchProblem sp = new DeepSearch(g, cities[src], cities[dest]);
 
-			/* If success break */
-			if(r.isSuccess())
-				break;
-		}
+        stack.add(cities[src]);
+        while(!stack.isEmpty())
+        {
+            /* Expand */
+            //c = list.pop();
+            c = stack.remove();
+            c.setColour(Colour.GRAY);
+            cl = sp.expand(c);
 
-		/* If the loop ended in success, build the path */
-		if(r.isSuccess())
-		{
-			System.out.println("Destiny: \"" + c + "\" found!");
-			List<City> rpath = new LinkedList<City>();
-			List<City> path = new LinkedList<City>();
+            /* Put all non processed nodes in the queue */
+            for(Object node: cl)
+            {
+                if( ((City)node).getColour() == Colour.WHITE)
+                    stack.add((City)node);
 
-			/*
-			 * Build the path form source to destiny
-			 */
-			while(!((DeepSearch)sp).getSource().equals((Object)c))
-			{
-				rpath.add(c);
-				c = c.getFather();
-			}
+                /* Set the father of the expanded node to c */
+                if( (((City)node).getFather() == null) )
+                    ((City)node).setFather(c);
+            }
 
-			/* Reverse the path */
-			path.add(((DeepSearch)sp).getSource());
-			for(int i = rpath.size() - 1; i >=0; i--)
-				path.add(rpath.get(i));
+            /* If c is NOT BLACK process it and make it BLACK */
+            if( c.getColour() != Colour.BLACK)
+            {
+                r = sp.process(c);
+                c.setColour(Colour.BLACK);
+            }
 
-			/* Print the path */
-			System.out.printf("\nPath from %s to %s is:\n", ((DeepSearch)sp).getSource(), ((DeepSearch)sp).getTarget());
-			for(City vc: path)
-				System.out.println(vc);
-		}
-		else
-			System.out.printf("Destiny not found!\n");
-	}
+            /* If success break */
+            if(r.isSuccess())
+                break;
+        }
+
+        /* If the loop ended in success, build the path */
+        if(r.isSuccess())
+        {
+            System.out.println("Destiny: \"" + c + "\" found!");
+            List<City> rpath = new LinkedList<City>();
+            List<City> path = new LinkedList<City>();
+
+            /*
+             * Build the path form source to destiny
+             */
+            while(!((DeepSearch)sp).getSource().equals((Object)c))
+            {
+                rpath.add(c);
+                c = c.getFather();
+            }
+
+            /* Reverse the path */
+            path.add(((DeepSearch)sp).getSource());
+            for(int i = rpath.size() - 1; i >=0; i--)
+                path.add(rpath.get(i));
+
+            /* Print the path */
+            System.out.printf("\nPath from %s to %s is:\n", ((DeepSearch)sp).getSource(), ((DeepSearch)sp).getTarget());
+            for(City vc: path)
+                System.out.println(vc);
+        }
+        else
+            System.out.printf("Destiny not found!\n");
+    }
+
+    public String[] getCityNames()
+    {
+        return cityNames;
+    }
 }
