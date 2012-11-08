@@ -16,7 +16,7 @@ public class main
      */
     public static void main(String[] args)
     {
-        ExecuteGreedy gs = new ExecuteGreedy();
+        ExecuteGreedy gs;
         int op = 100, i, src, dst;
         Scanner sc = new Scanner(System.in);
         String cities[];
@@ -48,6 +48,7 @@ public class main
 
             case 4:
                 //Busca Gulosa
+                gs = new ExecuteGreedy();
                 cities = gs.getCityNames();
 
                 System.out.printf("\nEscolha a cidade da partida:\n");
