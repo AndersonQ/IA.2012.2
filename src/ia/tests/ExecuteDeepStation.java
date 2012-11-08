@@ -122,21 +122,20 @@ public class ExecuteDeepStation {
             /* Expand */
             //c = list.pop();
             c = stack.pop();
-            System.out.println("GOT: " + c);
+//            System.out.println("GOT: " + c);
             c.setColour(Colour.GRAY);
             cl = sp.expand(c);
 
             /* Put all non processed nodes in the queue */
             for(Object node: cl)
             {
-                System.out.printf("Expanded %s (%s) from %s\n", (Station)node, ((Station)node).getColour(), c);
+//                System.out.printf("Expanded %s (%s) from %s\n", (Station)node, ((Station)node).getColour(), c);
                 if( ((Station)node).getColour() == Colour.WHITE)
                     stack.push((Station)node);
 
                 /* Set the father of the expanded node to c */
                 if( (((Station)node).getFather() == null) )
                     ((Station)node).setFather(c);
-                System.out.printf("Stack: %d\n", stack.size());
             }
 
             /* If c is NOT BLACK process it and make it BLACK */
@@ -164,6 +163,7 @@ public class ExecuteDeepStation {
              */
             while(!((DeepSearch)sp).getSource().equals((Object)c))
             {
+                System.out.println(c);
                 rpath.add(c);
                 c = c.getFather();
             }
