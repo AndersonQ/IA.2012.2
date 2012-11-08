@@ -3,6 +3,7 @@ package ia;
 import java.util.Scanner;
 
 import ia.search.ExecuteGreedy;
+import ia.tests.BreadthTest;
 
 /**
  * 
@@ -17,6 +18,7 @@ public class main
     public static void main(String[] args)
     {
         ExecuteGreedy gs;
+        BreadthTest bs;
         int op = 100, i, src, dst;
         Scanner sc = new Scanner(System.in);
         String cities[];
@@ -36,6 +38,31 @@ public class main
             {
             case 1:
                 //Busca em largura
+                bs = new BreadthTest();
+                cities = bs.getCityNames();
+
+                System.out.printf("\nEscolha a cidade da partida:\n");
+                for(i = 0; i < cities.length; i++)
+                    System.out.printf("%d - %s\n", i, cities[i]);
+                System.out.printf(">");
+                src = sc.nextInt();
+
+                System.out.printf("\nEscolha a cidade de destino:\n");
+                for(i = 0; i < cities.length; i++)
+                    if(i != src)
+                        System.out.printf("%d - %s\n", i, cities[i]);
+                System.out.printf(">");
+                dst = sc.nextInt();
+
+                try
+                {
+                    bs.run(src, dst);
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                    System.exit(1);
+                }
                 break;
 
             case 2:
