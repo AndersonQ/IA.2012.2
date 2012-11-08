@@ -3,6 +3,11 @@ package ia;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
 
+/**
+ * 
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ *
+ */
 public class TimeStationLink extends DefaultEdge 
 {
 	private static int count = 0;

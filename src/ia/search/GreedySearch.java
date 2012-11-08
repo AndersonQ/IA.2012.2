@@ -13,6 +13,11 @@ import java.util.Set;
 
 import org.jgrapht.UndirectedGraph;
 
+/**
+ * 
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ *
+ */
 public class GreedySearch  implements SearchProblem
 {
     private UndirectedGraph<City, WeightCityLink> g;

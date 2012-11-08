@@ -18,7 +18,6 @@ import org.jgrapht.UndirectedGraph;
  * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
  *
  */
-
 public class UniformCostSearch implements SearchProblem{
 	
 	/** The graph */

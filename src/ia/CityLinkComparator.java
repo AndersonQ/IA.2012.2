@@ -2,6 +2,11 @@ package ia;
 
 import java.util.Comparator;
 
+/**
+ * 
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ *
+ */
 public class CityLinkComparator implements Comparator<WeightCityLink> 
 {
 
