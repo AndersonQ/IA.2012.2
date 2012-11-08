@@ -30,8 +30,6 @@ public class ExecuteDeepStation {
         UndirectedGraph<Station, TimeStationLink> g = new SimpleGraph<Station, TimeStationLink>(TimeStationLink.class);
         Station e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16;
 
-
-
         e1 = new Station("CPTM Santo André");
         e2 = new Station("EMTU Santo André");
         e3 = new Station("CPTM Bras");  
@@ -66,7 +64,7 @@ public class ExecuteDeepStation {
         g.addVertex(e15);
         g.addVertex(e16);
 
-        /*==================Dados das conex�es de tempo - TimeStationLink=======*/
+        /*==================Dados das conexções de tempo - TimeStationLink=======*/
         g.addEdge(e1, e3, new TimeStationLink(g, 30) );
         g.addEdge(e1, e5, new TimeStationLink(g, 20) );
 
