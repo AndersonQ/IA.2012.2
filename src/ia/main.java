@@ -19,6 +19,7 @@ package ia;
 
 import java.util.Scanner;
 
+import ia.execute.Execute;
 import ia.execute.ExecuteBreadth;
 import ia.execute.ExecuteBreathStation;
 import ia.execute.ExecuteDeep;
@@ -38,12 +39,7 @@ public class main
      */
     public static void main(String[] args)
     {
-        ExecuteGreedy gs;
-        ExecuteBreadth bs;
-        ExecuteUniformCost ufc;
-        ExecuteDeep ds;
-        ExecuteDeepStation dss;
-        ExecuteBreathStation dbs;
+        Execute es;
         
         int op = 100, i, src, dst;
         Scanner sc = new Scanner(System.in);
@@ -69,8 +65,8 @@ public class main
             {
             case 1:
                 //Busca em largura
-                bs = new ExecuteBreadth();
-                cities = bs.getCityNames();
+                es = new ExecuteBreadth();
+                cities = es.getCityNames();
 
                 System.out.printf("\nEscolha a cidade da partida:\n");
                 for(i = 0; i < cities.length; i++)
@@ -87,7 +83,7 @@ public class main
 
                 try
                 {
-                    bs.run(src, dst);
+                    es.run(src, dst);
                 }
                 catch(Exception e)
                 {
@@ -98,8 +94,8 @@ public class main
 
             case 2:
                 //Busca em profundidade
-                ds = new ExecuteDeep();
-                cities = ds.getCityNames();
+                es = new ExecuteDeep();
+                cities = es.getCityNames();
 
                 System.out.printf("\nEscolha a cidade da partida:\n");
                 for(i = 0; i < cities.length; i++)
@@ -116,7 +112,7 @@ public class main
 
                 try
                 {
-                	ds.run(src, dst);
+                	es.run(src, dst);
                 }
                 catch(Exception e)
                 {
@@ -127,8 +123,8 @@ public class main
 
             case 3:
                 //Busca de custo uniforme
-                ufc = new ExecuteUniformCost();
-                cities = ufc.getCityNames();
+                es = new ExecuteUniformCost();
+                cities = es.getCityNames();
 
                 System.out.printf("\nEscolha a cidade da partida:\n");
                 for(i = 0; i < cities.length; i++)
@@ -145,7 +141,7 @@ public class main
 
                 try
                 {
-                	ufc.run(src, dst);
+                	es.run(src, dst);
                 }
                 catch(Exception e)
                 {
@@ -156,8 +152,8 @@ public class main
 
             case 4:
                 //Busca Gulosa
-                gs = new ExecuteGreedy();
-                cities = gs.getCityNames();
+                es = new ExecuteGreedy();
+                cities = es.getCityNames();
 
                 System.out.printf("\nEscolha a cidade da partida:\n");
                 for(i = 0; i < cities.length; i++)
@@ -174,7 +170,7 @@ public class main
 
                 try
                 {
-                    gs.run(src, dst);
+                    es.run(src, dst);
                 }
                 catch(Exception e)
                 {
@@ -184,12 +180,12 @@ public class main
                 break;
             case 5:
                 //Busca em profundidade USP
-                dss = new ExecuteDeepStation();
+                es = new ExecuteDeepStation();
                 System.out.printf("Indo de CPTM Santo André para USP\n");
 
                 try
                 {
-                	dss.run(1, 0);
+                	es.run(1, 0);
                 }
                 catch(Exception e)
                 {
@@ -200,12 +196,12 @@ public class main
                 
             case 6:
                 //Busca em largura USP
-                dbs = new ExecuteBreathStation();
+                es = new ExecuteBreathStation();
                 System.out.printf("Indo de CPTM Santo André para USP\n");
 
                 try
                 {
-                    dbs.run(1, 0);
+                    es.run(1, 0);
                 }
                 catch(Exception e)
                 {
@@ -216,12 +212,12 @@ public class main
                 
             case 7:
                 //Busca em profundidade USP Onibus
-                dss = new ExecuteDeepStation();
+                es = new ExecuteDeepStation();
                 System.out.printf("Indo de EMTU Santo André para USP\n");
 
                 try
                 {
-                    dss.run(2, 0);
+                    es.run(2, 0);
                 }
                 catch(Exception e)
                 {
@@ -232,12 +228,12 @@ public class main
                 
             case 8:
                 //Busca em largura USP EMTU
-                dbs = new ExecuteBreathStation();
+                es = new ExecuteBreathStation();
                 System.out.printf("Indo de EMTU Santo André para USP\n");
 
                 try
                 {
-                    dbs.run(2, 0);
+                    es.run(2, 0);
                 }
                 catch(Exception e)
                 {
