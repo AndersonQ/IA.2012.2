@@ -36,7 +36,7 @@ import org.jgrapht.graph.SimpleGraph;
  * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
  *
  */
-public class ExecuteGreedy
+public class ExecuteGreedy implements Execute
 {
     UndirectedGraph<City, WeightCityLink> g;
     City source, destiny;
