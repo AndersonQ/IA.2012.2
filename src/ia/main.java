@@ -3,7 +3,7 @@ package ia;
 import java.util.Scanner;
 
 import ia.search.ExecuteGreedy;
-import ia.tests.BreadthTest;
+import ia.tests.ExecuteBreadth;
 import ia.search.ExecuteUniformCost;
 
 /**
@@ -19,7 +19,7 @@ public class main
     public static void main(String[] args)
     {
         ExecuteGreedy gs;
-        BreadthTest bs;
+        ExecuteBreadth bs;
         ExecuteUniformCost ufc;
         int op = 100, i, src, dst;
         Scanner sc = new Scanner(System.in);
@@ -40,7 +40,7 @@ public class main
             {
             case 1:
                 //Busca em largura
-                bs = new BreadthTest();
+                bs = new ExecuteBreadth();
                 cities = bs.getCityNames();
 
                 System.out.printf("\nEscolha a cidade da partida:\n");

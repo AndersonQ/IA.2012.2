@@ -15,14 +15,14 @@ import java.util.Stack;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
-public class BreadthTest
+public class ExecuteBreadth
 {
     UndirectedGraph<City, WeightCityLink> g;
     City source, destiny;
     String[] cityNames;
 
     City cities[];
-    public BreadthTest()
+    public ExecuteBreadth()
     {
         /*
          * Build a vector with the cities names.
