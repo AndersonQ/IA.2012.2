@@ -12,10 +12,7 @@ import java.util.Stack;
 import org.jgrapht.UndirectedGraph;
 
 public class BreadthSearch implements SearchProblem {
-	
-	
 
-	
 	/** The graph */
 	private UndirectedGraph<City, WeightCityLink> graph;
 	/** A stack to walk trough graph */ 
@@ -29,22 +26,15 @@ public class BreadthSearch implements SearchProblem {
 	{
 		this.graph = graph;
 		this.list = new LinkedList<City>();
-		
-	
-		
-			}
+	}
 	
 	public void paint_white(UndirectedGraph<City,WeightCityLink> graph){
 		
 		 Set<City>vertices = graph.vertexSet();
 		 
 		 for(City c:vertices){
-			 c.setColour(Colour.WHITE);
-			 
+			 c.setColour(Colour.WHITE);		 
 		 }
-		 
-		 
-			
 		}
 	
 	public List run(City inicio, City fim){
@@ -61,7 +51,6 @@ public class BreadthSearch implements SearchProblem {
 			
 			if(temp == fim){
 				return list;
-				
 			}
 			
 			for(WeightCityLink e:vert_col){
@@ -69,17 +58,11 @@ public class BreadthSearch implements SearchProblem {
 				
 				if(filho.getColour() == Colour.WHITE){
 					filho.setColour(Colour.GRAY);
-					list.add(filho);
-					
+					list.add(filho);	
 				}
-				
 				temp.setColour(Colour.BLACK);
-				
 			}
-			
 		}
-	
-		
 		return null;
 	}
 	
