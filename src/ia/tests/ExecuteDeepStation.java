@@ -113,7 +113,7 @@ public class ExecuteDeepStation {
         List<Object> cl = null;
         SearchResult r = null;
 
-        System.out.printf("Trying to go to: %s from %s\n", e1, e16);
+        System.out.printf("Indo de %s para %s\n", e1, e16);
         SearchProblem sp = new DeepSearchStations(g, e1, e16);
 
         stack.push(e1);
@@ -129,13 +129,14 @@ public class ExecuteDeepStation {
             /* Put all non processed nodes in the queue */
             for(Object node: cl)
             {
-                System.out.printf("Expanded %s from %s\n", (Station)node, c);
+                System.out.printf("Expanded %s (%s) from %s\n", (Station)node, ((Station)node).getColour(), c);
                 if( ((Station)node).getColour() == Colour.WHITE)
                     stack.push((Station)node);
 
                 /* Set the father of the expanded node to c */
                 if( (((Station)node).getFather() == null) )
                     ((Station)node).setFather(c);
+                System.out.printf("Stack: %d\n", stack.size());
             }
 
             /* If c is NOT BLACK process it and make it BLACK */
