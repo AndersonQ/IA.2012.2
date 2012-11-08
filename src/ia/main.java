@@ -2,6 +2,11 @@ package ia;
 
 import ia.search.ExecuteGreedy;
 
+/**
+ * 
+ * @author Anderson Queiroz, Fernando Zucatelli, João Coutinho, Tiago Queiroz
+ *
+ */
 public class main
 {
     /**
