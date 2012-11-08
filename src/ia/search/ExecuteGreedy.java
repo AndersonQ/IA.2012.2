@@ -105,7 +105,7 @@ public class ExecuteGreedy
     {
         if((src < 0) || (src >= 8) || (dest < 0) || (dest >=8))
             throw new Exception("Source or destiny not found!");
-        
+
         source = cities[src];
         destiny = cities[dest];
         /*
@@ -118,7 +118,7 @@ public class ExecuteGreedy
         List<Object> cl = null;
         SearchResult r = null;
         //Diadema -> Guarulhos
-        System.out.printf("Trying to go to: %s from %s\n", destiny, source);
+        System.out.printf("Buscando caminho de %s para %s\n", source, destiny);
         SearchProblem sp = new GreedySearch(g, source, destiny, h);
         s.push(source);
         while(!s.empty())
@@ -154,7 +154,7 @@ public class ExecuteGreedy
         /* If the loop ended in success, build the path */
         if(r.isSuccess())
         {
-            System.out.println("Destiny: \"" + c + "\" found!");
+            System.out.println("Destino: \"" + c + "\" encontrado!");
             List<City> rpath = new LinkedList<City>();
             List<City> path = new LinkedList<City>();
 
@@ -173,11 +173,16 @@ public class ExecuteGreedy
                 path.add(rpath.get(i));
 
             /* Print the path */
-            System.out.printf("\nPath from %s to %s is:\n", ((GreedySearch)sp).getSource(), ((GreedySearch)sp).getDestiny());
+            System.out.printf("\nCaminho de %s para %s is:\n", ((GreedySearch)sp).getSource(), ((GreedySearch)sp).getDestiny());
             for(City vc: path)
                 System.out.println(vc);
         }
         else
-            System.out.printf("Destiny not found!\n");
+            System.out.printf("Destino não encontrado!\n");
+    }
+
+    public String[] getCityNames()
+    {
+        return cityNames;
     }
 }
