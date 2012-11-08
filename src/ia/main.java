@@ -20,6 +20,7 @@ package ia;
 import java.util.Scanner;
 
 import ia.execute.ExecuteBreadth;
+import ia.execute.ExecuteBreathStation;
 import ia.execute.ExecuteDeep;
 import ia.execute.ExecuteDeepStation;
 import ia.execute.ExecuteGreedy;
@@ -42,6 +43,7 @@ public class main
         ExecuteUniformCost ufc;
         ExecuteDeep ds;
         ExecuteDeepStation dss;
+        ExecuteBreathStation dbs;
         
         int op = 100, i, src, dst;
         Scanner sc = new Scanner(System.in);
@@ -56,6 +58,7 @@ public class main
             System.out.printf("4 - Busca gulosa\n");
             System.out.printf("\nCaminhos da UFABC a para USP\n");
             System.out.printf("5 - Busca em profundidade\n");
+            System.out.printf("6 - Busca em largura\n");
             System.out.printf("0 - Sair\n");
             System.out.printf("> ");
             op = sc.nextInt();            
@@ -192,6 +195,23 @@ public class main
                     System.exit(1);
                 }
                 break;
+                
+            case 6:
+                //Busca em largura USP
+                dbs = new ExecuteBreathStation();
+                System.out.printf("Indo de CPTM Santo André para USP\n");
+
+                try
+                {
+                    dbs.run();
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                    System.exit(1);
+                }
+                break;
+                
 
             default:
                 break;
