@@ -37,7 +37,6 @@ public class WeightCityLink extends DefaultEdge implements Comparable
 	 * @param o a WeightCityLink object 
 	 * @return 0 if the weight of both are equal, -1 if 'o' weight is bigger, and 1 otherwise
 	 */
-	@Override
 	public int compareTo(Object o) {
 		if(this.weight < ((WeightCityLink)o).getWeight())
 		{

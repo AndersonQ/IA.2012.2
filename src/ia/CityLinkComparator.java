@@ -15,7 +15,6 @@ public class CityLinkComparator implements Comparator<WeightCityLink>
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public int compare(WeightCityLink arg0, WeightCityLink arg1) 
 	{
 		if(arg0.getWeight() < arg1.getWeight())

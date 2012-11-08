@@ -38,7 +38,6 @@ public class UniformCostSearch implements SearchProblem{
 		this.orderedlist = new PriorityQueue<WeightCityLink>();
 	}
 	
-	@Override
 	public List<Object> expand(Object o) {
 		//Cast to city
 		City node = (City) o;
@@ -77,7 +76,6 @@ public class UniformCostSearch implements SearchProblem{
 		return list;
 	}
 
-	@Override
 	public SearchResult process(Object o) {
 		City city = (City) o;
 		//city is the goal true, otherwise, fail

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import ia.search.ExecuteGreedy;
 import ia.tests.BreadthTest;
+import ia.search.ExecuteUniformCost;
 
 /**
  * 
@@ -19,6 +20,7 @@ public class main
     {
         ExecuteGreedy gs;
         BreadthTest bs;
+        ExecuteUniformCost ufc;
         int op = 100, i, src, dst;
         Scanner sc = new Scanner(System.in);
         String cities[];

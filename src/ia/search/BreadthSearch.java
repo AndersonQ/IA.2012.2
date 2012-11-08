@@ -83,7 +83,6 @@ public class BreadthSearch implements SearchProblem {
 		return null;
 	}
 	
-	@Override
 	public List<Object> expand(Object o) {
 		//Cast to city
 		City city = (City) o;
@@ -105,7 +104,6 @@ public class BreadthSearch implements SearchProblem {
 		return l;
 	}
 
-	@Override
 	public SearchResult process(Object o) {
 		
 		

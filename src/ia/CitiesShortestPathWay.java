@@ -25,7 +25,6 @@ public class CitiesShortestPathWay implements SearchProblem
 		g = new SimpleGraph<City, WeightCityLink>(WeightCityLink.class);
 	}
 
-	@Override
 	public List<Object> expand(Object o) 
 	{
 		Set<WeightCityLink> s;
@@ -45,7 +44,6 @@ public class CitiesShortestPathWay implements SearchProblem
 	}
 	
 	
-	@Override
 	public SearchResult process(Object o) 
 	{
 		// TODO Auto-generated method stub
