@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package ia.tests;
+package ia.execute;
 
 import ia.Station;
 import ia.Colour;
@@ -24,6 +24,7 @@ import ia.search.DeepSearch;
 import ia.search.SearchProblem;
 import ia.search.SearchResult;
 import ia.search.UniformCostSearch;
+import ia.tests.DeepSearchStations;
 
 import java.util.LinkedList;
 import java.util.List;
