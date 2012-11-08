@@ -141,7 +141,6 @@ public class ExecuteDeepStation {
             /* If c is NOT BLACK process it and make it BLACK */
             if( c.getColour() != Colour.BLACK)
             {
-                System.out.println("processing: " + c); 
                 r = sp.process(c);
                 c.setColour(Colour.BLACK);
             }
@@ -161,9 +160,8 @@ public class ExecuteDeepStation {
             /*
              * Build the path form source to destiny
              */
-            while(!((DeepSearch)sp).getSource().equals((Object)c))
+            while(!((DeepSearchStations)sp).getSource().equals((Object)c))
             {
-                System.out.println(c);
                 rpath.add(c);
                 c = c.getFather();
             }
@@ -174,7 +172,7 @@ public class ExecuteDeepStation {
                 path.add(rpath.get(i));
 
             /* Print the path */
-            System.out.printf("\nPath from %s to %s is:\n", ((DeepSearch)sp).getSource(), ((DeepSearch)sp).getTarget());
+            System.out.printf("\nPath from %s to %s is:\n", ((DeepSearchStations)sp).getSource(), ((DeepSearchStations)sp).getTarget());
             for(Station vc: path)
                 System.out.println(vc);
         }
