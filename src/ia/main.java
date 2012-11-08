@@ -3,6 +3,7 @@ package ia;
 import java.util.Scanner;
 
 import ia.search.ExecuteGreedy;
+import ia.search.ExecuteUniformCost;
 
 /**
  * 
@@ -17,6 +18,7 @@ public class main
     public static void main(String[] args)
     {
         ExecuteGreedy gs;
+        ExecuteUniformCost ufc;
         int op = 100, i, src, dst;
         Scanner sc = new Scanner(System.in);
         String cities[];
@@ -36,7 +38,8 @@ public class main
             {
             case 1:
                 //Busca em largura
-                cities = gs.getCityNames();
+            	ufc = new ExecuteUniformCost();
+                cities = ufc.getCityNames();
 
                 System.out.printf("\nEscolha a cidade da partida:\n");
                 for(i = 0; i < cities.length; i++)
@@ -53,7 +56,7 @@ public class main
 
                 try
                 {
-                    gs.run(src, dst);
+                	ufc.run(src, dst);
                 }
                 catch(Exception e)
                 {
